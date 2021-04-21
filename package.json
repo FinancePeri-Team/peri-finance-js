@@ -25,7 +25,7 @@
     "build": "npm run clear && npm run abitojs && npm run format && npm run webpack && npm test"
   },
   "dependencies": {
-    "@financeperi-team/peri-finance": "^0.0.1",
+    "@perifinance/peri-finance": "^0.0.1",
     "@ledgerhq/hw-app-eth": "4.74.2",
     "@ledgerhq/hw-transport": "4.74.2",
     "@ledgerhq/hw-transport-u2f": "4.74.2",
