@@ -1,13 +1,13 @@
 {
-  "name": "@financeperi-team/peri-finance-js",
+  "name": "@perifinance/peri-finance-js",
   "version": "0.0.1",
-  "author": "financeperi-team",
+  "author": "perifinance",
   "description": "peri-finance JS Library - access peri-finance smart contracts from browser and Node.js",
   "license": "MIT",
-  "homepage": "https://test.peri.finance",
+  "homepage": "https://www.pynths.com/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FinancePeri-Team/peri-finance-js.git"
+    "url": "git+https://github.com/perifinance/peri-finance-js.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
