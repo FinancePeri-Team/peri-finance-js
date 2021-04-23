@@ -1,6 +1,6 @@
 import ContractSettings from '../../src/contractSettings';
 import pynths from '../../lib/pynths';
-import * as peri from '@financeperi-team/peri-finance';
+import * as peri from '@perifinance/peri-finance';
 
 const { SUPPORTED_NETWORKS } = ContractSettings;
 

@@ -1,6 +1,6 @@
 import { PeriFinanceJs } from '../../../src/index.node.js';
 import ContractSettings from '../../../src/contractSettings';
-import * as peri from '@financeperi-team/peri-finance';
+import * as peri from '@perifinance/peri-finance';
 
 const { SUPPORTED_NETWORKS } = ContractSettings;
 

@@ -1,4 +1,4 @@
-import * as peri from '@financeperi-team/peri-finance';
+import * as peri from '@perifinance/peri-finance';
 import { PeriFinanceJs } from '../../src/index.node.js';
 import ContractSettings from '../../src/contractSettings';
 import { contracts } from '../../tools/abitojs';
