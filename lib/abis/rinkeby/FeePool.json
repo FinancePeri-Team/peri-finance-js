@@ -74,7 +74,7 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "snxRewards",
+				"name": "periRewards",
 				"type": "uint256"
 			}
 		],

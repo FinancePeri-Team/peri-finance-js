@@ -37,13 +37,7 @@ import pXRP from './pXRP';
 import pLTC from './pLTC';
 import pLINK from './pLINK';
 import pEOS from './pEOS';
-import sBCH from './sBCH';
 import pETC from './pETC';
-import sDASH from './sDASH';
-import sXMR from './sXMR';
-import sADA from './sADA';
-import sFTSE from './sFTSE';
-import sNIKKEI from './sNIKKEI';
 import pCEX from './pCEX';
 import pDEFI from './pDEFI';
 import iBTC from './iBTC';
@@ -103,13 +97,7 @@ export default {
   pLTC,
   pLINK,
   pEOS,
-  sBCH,
   pETC,
-  sDASH,
-  sXMR,
-  sADA,
-  sFTSE,
-  sNIKKEI,
   pCEX,
   pDEFI,
   iBTC,

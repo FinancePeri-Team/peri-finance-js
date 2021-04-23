@@ -474,7 +474,7 @@
 	{
 		"constant": false,
 		"inputs": [],
-		"name": "exchangeEtherForSNX",
+		"name": "exchangeEtherForPERI",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -501,7 +501,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "exchangeEtherForSNXAtRate",
+		"name": "exchangeEtherForPERIAtRate",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -561,7 +561,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "exchangePynthsForSNX",
+		"name": "exchangePynthsForPERI",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -588,7 +588,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "exchangePynthsForSNXAtRate",
+		"name": "exchangePynthsForPERIAtRate",
 		"outputs": [
 			{
 				"internalType": "uint256",

@@ -20,9 +20,9 @@ function Depot(contractSettings) {
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
-  this.exchangeEtherForSNX = async txParams => {
+  this.exchangeEtherForPERI = async txParams => {
     txParams = txParams || {};
-    return await this.contract.exchangeEtherForSNX(txParams);
+    return await this.contract.exchangeEtherForPERI(txParams);
   };
 
   /**
@@ -235,13 +235,13 @@ function Depot(contractSettings) {
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
-  this.exchangeEtherForSNXAtRate = async (
+  this.exchangeEtherForPERIAtRate = async (
     guaranteedEtherRate,
     guaranteedPeriFinanceRate,
     txParams
   ) => {
     txParams = txParams || {};
-    return await this.contract.exchangeEtherForSNXAtRate(
+    return await this.contract.exchangeEtherForPERIAtRate(
       guaranteedEtherRate,
       guaranteedPeriFinanceRate,
       txParams
@@ -304,9 +304,9 @@ function Depot(contractSettings) {
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
-  this.exchangePynthsForSNXAtRate = async (pynthAmount, guaranteedRate, txParams) => {
+  this.exchangePynthsForPERIAtRate = async (pynthAmount, guaranteedRate, txParams) => {
     txParams = txParams || {};
-    return await this.contract.exchangePynthsForSNXAtRate(pynthAmount, guaranteedRate, txParams);
+    return await this.contract.exchangePynthsForPERIAtRate(pynthAmount, guaranteedRate, txParams);
   };
 
   /**
@@ -403,9 +403,9 @@ function Depot(contractSettings) {
    * @param txParams {TxParams}
    * @returns BigNumber
    **/
-  this.exchangePynthsForSNX = async (pynthAmount, txParams) => {
+  this.exchangePynthsForPERI = async (pynthAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.exchangePynthsForSNX(pynthAmount, txParams);
+    return await this.contract.exchangePynthsForPERI(pynthAmount, txParams);
   };
 
   /**

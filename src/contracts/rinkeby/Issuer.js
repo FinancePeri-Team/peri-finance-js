@@ -58,8 +58,8 @@ function Issuer(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns boolean
    **/
-  this.anyPynthOrSNXRateIsInvalid = async () => {
-    return await this.contract.anyPynthOrSNXRateIsInvalid();
+  this.anyPynthOrPERIRateIsInvalid = async () => {
+    return await this.contract.anyPynthOrPERIRateIsInvalid();
   };
 
   /**

@@ -44,7 +44,7 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "snxRedeemed",
+				"name": "periRedeemed",
 				"type": "uint256"
 			},
 			{
@@ -408,7 +408,7 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "anyPynthOrSNXRateIsInvalid",
+		"name": "anyPynthOrPERIRateIsInvalid",
 		"outputs": [
 			{
 				"internalType": "bool",

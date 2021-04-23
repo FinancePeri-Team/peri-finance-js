@@ -249,7 +249,7 @@
 		"outputs": [
 			{
 				"internalType": "uint256[]",
-				"name": "snxIssuedDebts",
+				"name": "periIssuedDebts",
 				"type": "uint256[]"
 			}
 		],

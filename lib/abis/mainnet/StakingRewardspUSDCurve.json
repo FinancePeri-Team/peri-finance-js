@@ -346,7 +346,7 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "snx",
+		"name": "peri",
 		"outputs": [
 			{
 				"internalType": "contract IERC20",

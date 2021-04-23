@@ -30,7 +30,6 @@ import pGBP from './pGBP';
 import pCHF from './pCHF';
 import pXAU from './pXAU';
 import pXAG from './pXAG';
-import sOIL from './sOIL';
 import pBTC from './pBTC';
 import pETH from './pETH';
 import pBNB from './pBNB';
@@ -41,17 +40,6 @@ import pLTC from './pLTC';
 import pLINK from './pLINK';
 import pEOS from './pEOS';
 import pETC from './pETC';
-import sDASH from './sDASH';
-import sXMR from './sXMR';
-import sADA from './sADA';
-import sAAVE from './sAAVE';
-import sUNI from './sUNI';
-import sYFI from './sYFI';
-import sDOT from './sDOT';
-import sREN from './sREN';
-import sCOMP from './sCOMP';
-import sFTSE from './sFTSE';
-import sNIKKEI from './sNIKKEI';
 import pTSLA from './pTSLA';
 import pCEX from './pCEX';
 import pDEFI from './pDEFI';
@@ -111,7 +99,6 @@ export default {
   pCHF,
   pXAU,
   pXAG,
-  sOIL,
   pBTC,
   pETH,
   pBNB,
@@ -122,17 +109,6 @@ export default {
   pLINK,
   pEOS,
   pETC,
-  sDASH,
-  sXMR,
-  sADA,
-  sAAVE,
-  sUNI,
-  sYFI,
-  sDOT,
-  sREN,
-  sCOMP,
-  sFTSE,
-  sNIKKEI,
   pTSLA,
   pCEX,
   pDEFI,
