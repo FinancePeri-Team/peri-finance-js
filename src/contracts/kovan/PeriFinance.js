@@ -508,17 +508,6 @@ function PeriFinance(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issuePynthsUsdc = async (amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issuePynthsUsdc(amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
    * @param pusdAmount {BigNumber}
    * @param txParams {TxParams}
@@ -793,6 +782,30 @@ function PeriFinance(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.stakeUSDCAndIssueMaxPynths = async (from, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.stakeUSDCAndIssueMaxPynths(from, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.stakeUSDCAndIssuePynths = async (from, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.stakeUSDCAndIssuePynths(from, amount, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String
    **/
@@ -870,6 +883,29 @@ function PeriFinance(contractSettings) {
    **/
   this.transferablePeriFinance = async account => {
     return await this.contract.transferablePeriFinance(account);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param amount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.unstakeUSDCAndBurnPynths = async (from, amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.unstakeUSDCAndBurnPynths(from, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.unstakeUSDCToMaxAndBurnPynths = async (from, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.unstakeUSDCToMaxAndBurnPynths(from, txParams);
   };
 }
 

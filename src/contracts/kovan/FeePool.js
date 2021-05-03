@@ -31,30 +31,6 @@ function FeePool(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.ONE_HUNDRED = async () => {
-    return await this.contract.ONE_HUNDRED();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.PERI_REWARD_RATIO = async () => {
-    return await this.contract.PERI_REWARD_RATIO();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.USDC_REWARD_RATIO = async () => {
-    return await this.contract.USDC_REWARD_RATIO();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -69,23 +45,15 @@ function FeePool(contractSettings) {
    * @param account {String<EthAddress>}
    * @param debtRatio {BigNumber}
    * @param debtEntryIndex {BigNumber}
-   * @param currencyKey {bytes32}
    * @param txParams {TxParams}
   
    **/
-  this.appendAccountIssuanceRecord = async (
-    account,
-    debtRatio,
-    debtEntryIndex,
-    currencyKey,
-    txParams
-  ) => {
+  this.appendAccountIssuanceRecord = async (account, debtRatio, debtEntryIndex, txParams) => {
     txParams = txParams || {};
     return await this.contract.appendAccountIssuanceRecord(
       account,
       debtRatio,
       debtEntryIndex,
-      currencyKey,
       txParams
     );
   };
@@ -125,11 +93,10 @@ function FeePool(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param period {BigNumber}
-   * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
-  this.effectiveDebtRatioForPeriod = async (account, period, currencyKey) => {
-    return await this.contract.effectiveDebtRatioForPeriod(account, period, currencyKey);
+  this.effectiveDebtRatioForPeriod = async (account, period) => {
+    return await this.contract.effectiveDebtRatioForPeriod(account, period);
   };
 
   /**
@@ -143,21 +110,19 @@ function FeePool(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @param currencyKey {bytes32}
    * @returns Object
    **/
-  this.feesAvailable = async (account, currencyKey) => {
-    return await this.contract.feesAvailable(account, currencyKey);
+  this.feesAvailable = async account => {
+    return await this.contract.feesAvailable(account);
   };
 
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @param currencyKey {bytes32}
    * @returns uint256[2][2]
    **/
-  this.feesByPeriod = async (account, currencyKey) => {
-    return await this.contract.feesByPeriod(account, currencyKey);
+  this.feesByPeriod = async account => {
+    return await this.contract.feesByPeriod(account);
   };
 
   /**
@@ -182,7 +147,7 @@ function FeePool(contractSettings) {
    * @param feePeriodIndex {BigNumber}
    * @param feePeriodId {BigNumber}
    * @param startingDebtIndex {BigNumber}
-   * @param startingUsdcDebtIndex {BigNumber}
+   * @param startingUSDCDebtIndex {BigNumber}
    * @param startTime {BigNumber}
    * @param feesToDistribute {BigNumber}
    * @param feesClaimed {BigNumber}
@@ -195,7 +160,7 @@ function FeePool(contractSettings) {
     feePeriodIndex,
     feePeriodId,
     startingDebtIndex,
-    startingUsdcDebtIndex,
+    startingUSDCDebtIndex,
     startTime,
     feesToDistribute,
     feesClaimed,
@@ -208,7 +173,7 @@ function FeePool(contractSettings) {
       feePeriodIndex,
       feePeriodId,
       startingDebtIndex,
-      startingUsdcDebtIndex,
+      startingUSDCDebtIndex,
       startTime,
       feesToDistribute,
       feesClaimed,
@@ -229,7 +194,7 @@ function FeePool(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @returns Object
+   * @returns boolean
    **/
   this.isFeesClaimable = async account => {
     return await this.contract.isFeesClaimable(account);

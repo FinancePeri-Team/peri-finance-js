@@ -108,17 +108,11 @@
 				"internalType": "uint256",
 				"name": "feePeriodStartingDebtIndex",
 				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
 			}
 		],
 		"name": "IssuanceDebtRatioEntry",
 		"type": "event",
-		"signature": "0x7c5f7fb6526b0a8616698d2eb9ae98c6784156340c80c4587cdb5cd9523f2536"
+		"signature": "0x28dcdf40e6b6196065d54760038ab1a8c0c1d9cfa58a99e6b0cb6022f7e24775"
 	},
 	{
 		"anonymous": false,
@@ -201,54 +195,6 @@
 		"signature": "0xcff2ddad"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "ONE_HUNDRED",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xbfaa8cca"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "PERI_REWARD_RATIO",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x7fcbadf8"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "USDC_REWARD_RATIO",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x5d71b6ae"
-	},
-	{
 		"constant": false,
 		"inputs": [],
 		"name": "acceptOwnership",
@@ -275,11 +221,6 @@
 				"internalType": "uint256",
 				"name": "debtEntryIndex",
 				"type": "uint256"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
 			}
 		],
 		"name": "appendAccountIssuanceRecord",
@@ -287,7 +228,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xf5031fb5"
+		"signature": "0x86645274"
 	},
 	{
 		"constant": false,
@@ -349,11 +290,6 @@
 				"internalType": "uint256",
 				"name": "period",
 				"type": "uint256"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
 			}
 		],
 		"name": "effectiveDebtRatioForPeriod",
@@ -367,7 +303,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xea72a8cc"
+		"signature": "0x0813071c"
 	},
 	{
 		"constant": true,
@@ -392,11 +328,6 @@
 				"internalType": "address",
 				"name": "account",
 				"type": "address"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
 			}
 		],
 		"name": "feesAvailable",
@@ -415,7 +346,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x9a87239a"
+		"signature": "0x0de58615"
 	},
 	{
 		"constant": true,
@@ -424,11 +355,6 @@
 				"internalType": "address",
 				"name": "account",
 				"type": "address"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
 			}
 		],
 		"name": "feesByPeriod",
@@ -442,7 +368,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xd314bbea"
+		"signature": "0x33140016"
 	},
 	{
 		"constant": true,
@@ -502,7 +428,7 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "startingUsdcDebtIndex",
+				"name": "startingUSDCDebtIndex",
 				"type": "uint256"
 			},
 			{
@@ -567,12 +493,7 @@
 		"outputs": [
 			{
 				"internalType": "bool",
-				"name": "periFeesClaimable",
-				"type": "bool"
-			},
-			{
-				"internalType": "bool",
-				"name": "usdcFeesClaimable",
+				"name": "feesClaimable",
 				"type": "bool"
 			}
 		],
@@ -722,11 +643,6 @@
 			{
 				"internalType": "uint64",
 				"name": "startingDebtIndex",
-				"type": "uint64"
-			},
-			{
-				"internalType": "uint64",
-				"name": "startingUsdcDebtIndex",
 				"type": "uint64"
 			},
 			{
