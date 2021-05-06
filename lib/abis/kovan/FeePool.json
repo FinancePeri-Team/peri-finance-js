@@ -221,6 +221,11 @@
 				"internalType": "uint256",
 				"name": "debtEntryIndex",
 				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
 			}
 		],
 		"name": "appendAccountIssuanceRecord",
@@ -228,7 +233,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x86645274"
+		"signature": "0xf5031fb5"
 	},
 	{
 		"constant": false,
@@ -290,6 +295,11 @@
 				"internalType": "uint256",
 				"name": "period",
 				"type": "uint256"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
 			}
 		],
 		"name": "effectiveDebtRatioForPeriod",
@@ -303,7 +313,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x0813071c"
+		"signature": "0xea72a8cc"
 	},
 	{
 		"constant": true,
@@ -355,6 +365,11 @@
 				"internalType": "address",
 				"name": "account",
 				"type": "address"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
 			}
 		],
 		"name": "feesByPeriod",
@@ -368,7 +383,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x33140016"
+		"signature": "0xd314bbea"
 	},
 	{
 		"constant": true,

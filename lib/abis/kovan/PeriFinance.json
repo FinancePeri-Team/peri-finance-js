@@ -1790,13 +1790,8 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
 				"internalType": "uint256",
-				"name": "amount",
+				"name": "usdcStakeAmount",
 				"type": "uint256"
 			}
 		],
@@ -1805,19 +1800,19 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xbc10b7b2"
+		"signature": "0x415d917e"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
+				"internalType": "uint256",
+				"name": "usdcStakeAmount",
+				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "amount",
+				"name": "issueAmount",
 				"type": "uint256"
 			}
 		],
@@ -1826,7 +1821,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x439e3d67"
+		"signature": "0x95b80e12"
 	},
 	{
 		"constant": true,
@@ -2005,13 +2000,13 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
+				"internalType": "uint256",
+				"name": "usdcUnstakeAmount",
+				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "amount",
+				"name": "burnAmount",
 				"type": "uint256"
 			}
 		],
@@ -2020,15 +2015,15 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xb05f25db"
+		"signature": "0x3a560e35"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
+				"internalType": "uint256",
+				"name": "burnAmount",
+				"type": "uint256"
 			}
 		],
 		"name": "unstakeUSDCToMaxAndBurnPynths",
@@ -2036,6 +2031,6 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x9e187b8e"
+		"signature": "0x0b717465"
 	}
 ]

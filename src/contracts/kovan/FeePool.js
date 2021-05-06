@@ -45,15 +45,23 @@ function FeePool(contractSettings) {
    * @param account {String<EthAddress>}
    * @param debtRatio {BigNumber}
    * @param debtEntryIndex {BigNumber}
+   * @param currencyKey {bytes32}
    * @param txParams {TxParams}
   
    **/
-  this.appendAccountIssuanceRecord = async (account, debtRatio, debtEntryIndex, txParams) => {
+  this.appendAccountIssuanceRecord = async (
+    account,
+    debtRatio,
+    debtEntryIndex,
+    currencyKey,
+    txParams
+  ) => {
     txParams = txParams || {};
     return await this.contract.appendAccountIssuanceRecord(
       account,
       debtRatio,
       debtEntryIndex,
+      currencyKey,
       txParams
     );
   };
@@ -93,10 +101,11 @@ function FeePool(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param period {BigNumber}
+   * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
-  this.effectiveDebtRatioForPeriod = async (account, period) => {
-    return await this.contract.effectiveDebtRatioForPeriod(account, period);
+  this.effectiveDebtRatioForPeriod = async (account, period, currencyKey) => {
+    return await this.contract.effectiveDebtRatioForPeriod(account, period, currencyKey);
   };
 
   /**
@@ -119,10 +128,11 @@ function FeePool(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
+   * @param currencyKey {bytes32}
    * @returns uint256[2][2]
    **/
-  this.feesByPeriod = async account => {
-    return await this.contract.feesByPeriod(account);
+  this.feesByPeriod = async (account, currencyKey) => {
+    return await this.contract.feesByPeriod(account, currencyKey);
   };
 
   /**

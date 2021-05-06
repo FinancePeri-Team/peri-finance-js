@@ -783,26 +783,25 @@ function PeriFinance(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
+   * @param usdcStakeAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.stakeUSDCAndIssueMaxPynths = async (from, amount, txParams) => {
+  this.stakeUSDCAndIssueMaxPynths = async (usdcStakeAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.stakeUSDCAndIssueMaxPynths(from, amount, txParams);
+    return await this.contract.stakeUSDCAndIssueMaxPynths(usdcStakeAmount, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
+   * @param usdcStakeAmount {BigNumber}
+   * @param issueAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.stakeUSDCAndIssuePynths = async (from, amount, txParams) => {
+  this.stakeUSDCAndIssuePynths = async (usdcStakeAmount, issueAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.stakeUSDCAndIssuePynths(from, amount, txParams);
+    return await this.contract.stakeUSDCAndIssuePynths(usdcStakeAmount, issueAmount, txParams);
   };
 
   /**
@@ -887,25 +886,25 @@ function PeriFinance(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
+   * @param usdcUnstakeAmount {BigNumber}
+   * @param burnAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.unstakeUSDCAndBurnPynths = async (from, amount, txParams) => {
+  this.unstakeUSDCAndBurnPynths = async (usdcUnstakeAmount, burnAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.unstakeUSDCAndBurnPynths(from, amount, txParams);
+    return await this.contract.unstakeUSDCAndBurnPynths(usdcUnstakeAmount, burnAmount, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
+   * @param burnAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.unstakeUSDCToMaxAndBurnPynths = async (from, txParams) => {
+  this.unstakeUSDCToMaxAndBurnPynths = async (burnAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.unstakeUSDCToMaxAndBurnPynths(from, txParams);
+    return await this.contract.unstakeUSDCToMaxAndBurnPynths(burnAmount, txParams);
   };
 }
 

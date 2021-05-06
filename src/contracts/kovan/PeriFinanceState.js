@@ -36,6 +36,17 @@ function PeriFinanceState(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param value {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.appendPeriDebtLedgerValue = async (value, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.appendPeriDebtLedgerValue(value, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -52,6 +63,17 @@ function PeriFinanceState(contractSettings) {
   this.clearIssuanceData = async (account, txParams) => {
     txParams = txParams || {};
     return await this.contract.clearIssuanceData(account, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.clearPeriIssuanceData = async (account, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.clearPeriIssuanceData(account, txParams);
   };
 
   /**
@@ -82,12 +104,31 @@ function PeriFinanceState(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.decrementTotalPeriIssuerCount = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.decrementTotalPeriIssuerCount(txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns boolean
    **/
   this.hasIssued = async account => {
     return await this.contract.hasIssued(account);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param account {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.hasPeriIssued = async account => {
+    return await this.contract.hasPeriIssued(account);
   };
 
   /**
@@ -98,6 +139,16 @@ function PeriFinanceState(contractSettings) {
   this.incrementTotalIssuerCount = async txParams => {
     txParams = txParams || {};
     return await this.contract.incrementTotalIssuerCount(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.incrementTotalPeriIssuerCount = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.incrementTotalPeriIssuerCount(txParams);
   };
 
   /**
@@ -115,6 +166,14 @@ function PeriFinanceState(contractSettings) {
    **/
   this.lastDebtLedgerEntry = async () => {
     return await this.contract.lastDebtLedgerEntry();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.lastPeriDebtLedgerEntry = async () => {
+    return await this.contract.lastPeriDebtLedgerEntry();
   };
 
   /**
@@ -145,6 +204,32 @@ function PeriFinanceState(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {BigNumber}
+   * @returns BigNumber
+   **/
+  this.periDebtLedger = async uint256_1 => {
+    return await this.contract.periDebtLedger(uint256_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.periDebtLedgerLength = async () => {
+    return await this.contract.periDebtLedgerLength();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {String<EthAddress>}
+   * @returns Object
+   **/
+  this.periIssuanceData = async address_1 => {
+    return await this.contract.periIssuanceData(address_1);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _associatedContract {String<EthAddress>}
    * @param txParams {TxParams}
@@ -168,11 +253,31 @@ function PeriFinanceState(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param account {String<EthAddress>}
+   * @param initialDebtOwnership {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setCurrentPeriIssuanceData = async (account, initialDebtOwnership, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setCurrentPeriIssuanceData(account, initialDebtOwnership, txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
   this.totalIssuerCount = async () => {
     return await this.contract.totalIssuerCount();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.totalPeriIssuerCount = async () => {
+    return await this.contract.totalPeriIssuerCount();
   };
 }
 
