@@ -92,22 +92,6 @@
 		"signature": "0x3d31e97b"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "appendPeriDebtLedgerValue",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xf4bf5993"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "associatedContract",
@@ -138,22 +122,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xb16c09f0"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "clearPeriIssuanceData",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x7a3b6ffa"
 	},
 	{
 		"constant": true,
@@ -204,16 +172,6 @@
 		"signature": "0xba08f299"
 	},
 	{
-		"constant": false,
-		"inputs": [],
-		"name": "decrementTotalPeriIssuerCount",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xd4404702"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
@@ -236,28 +194,6 @@
 		"signature": "0xb992812e"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "hasPeriIssued",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x1d9c68cc"
-	},
-	{
 		"constant": false,
 		"inputs": [],
 		"name": "incrementTotalIssuerCount",
@@ -266,16 +202,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x1bfba595"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "incrementTotalPeriIssuerCount",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xadc63059"
 	},
 	{
 		"constant": true,
@@ -319,22 +245,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x46317712"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "lastPeriDebtLedgerEntry",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x0cc5fe1e"
 	},
 	{
 		"constant": false,
@@ -385,71 +295,6 @@
 		"signature": "0x8da5cb5b"
 	},
 	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "periDebtLedger",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x7ef5099c"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "periDebtLedgerLength",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x1f912971"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "periIssuanceData",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "initialDebtOwnership",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "debtEntryIndex",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x215d9fa9"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -487,27 +332,6 @@
 		"signature": "0xa764eb45"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "initialDebtOwnership",
-				"type": "uint256"
-			}
-		],
-		"name": "setCurrentPeriIssuanceData",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x3ffb5001"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "totalIssuerCount",
@@ -522,21 +346,5 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x9371bede"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "totalPeriIssuerCount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xcb528da5"
 	}
 ]

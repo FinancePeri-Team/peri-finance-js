@@ -512,7 +512,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x23d60e2e"
+		"signature": "0x55bd615c"
 	},
 	{
 		"constant": true,
@@ -539,7 +539,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x72e18b6a"
+		"signature": "0x0e54a19b"
 	},
 	{
 		"constant": true,
@@ -1274,7 +1274,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x30edd961"
+		"signature": "0x37551ec6"
 	},
 	{
 		"constant": true,
@@ -1296,7 +1296,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x38245377"
+		"signature": "0xcd285020"
 	},
 	{
 		"constant": false,

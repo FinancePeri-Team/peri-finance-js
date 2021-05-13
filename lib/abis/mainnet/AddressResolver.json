@@ -145,7 +145,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x51456061"
+		"signature": "0x82b4c11c"
 	},
 	{
 		"constant": false,

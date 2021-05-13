@@ -192,6 +192,50 @@
 		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "startTime",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "iterations",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "totalAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "unitTime",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "endTime",
+				"type": "uint256"
+			}
+		],
+		"name": "LockChanged",
+		"type": "event",
+		"signature": "0x0053a2d0a74627ad6d346bc05ca92631666b0cec11ac95505fe1f048f3845e11"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
 				"indexed": false,
 				"internalType": "address",
 				"name": "oldOwner",
@@ -278,7 +322,7 @@
 		],
 		"name": "PynthExchange",
 		"type": "event",
-		"signature": "0x65b6972c94204d84cffd3a95615743e31270f04fdf251f3dccc705cfbad44776"
+		"signature": "0x4a0ae13ecb43c31fb105d00f9bb9bb573465fe44c0e86d51dc9b6c36090f6e28"
 	},
 	{
 		"anonymous": false,
@@ -419,7 +463,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x4e99bda9"
+		"signature": "0xf5adc4f5"
 	},
 	{
 		"constant": false,
@@ -478,7 +522,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xdbf63340"
+		"signature": "0xd99947de"
 	},
 	{
 		"constant": true,
@@ -500,7 +544,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x835e119c"
+		"signature": "0x9df95f9f"
 	},
 	{
 		"constant": true,
@@ -528,27 +572,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "burnSecondary",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xedef719a"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"internalType": "uint256",
 				"name": "amount",
 				"type": "uint256"
@@ -559,7 +582,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x295da87d"
+		"signature": "0xb07ecd2e"
 	},
 	{
 		"constant": false,
@@ -580,7 +603,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xc2bf3880"
+		"signature": "0x42f760cb"
 	},
 	{
 		"constant": false,
@@ -590,7 +613,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x9741fb22"
+		"signature": "0x54037f76"
 	},
 	{
 		"constant": false,
@@ -606,7 +629,28 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x2c955fa7"
+		"signature": "0x0ce4f2ef"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "burnSecondary",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xedef719a"
 	},
 	{
 		"constant": true,
@@ -812,7 +856,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x6c00f310"
+		"signature": "0x1b99084c"
 	},
 	{
 		"constant": false,
@@ -1016,6 +1060,80 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "getLock",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x6b9db4e6"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "getLockCalculation",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x2b793f67"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "integrationProxy",
 		"outputs": [
@@ -1076,7 +1194,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xaf086c7e"
+		"signature": "0x8e2ac0ea"
 	},
 	{
 		"constant": false,
@@ -1092,7 +1210,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x320223db"
+		"signature": "0x28691a75"
 	},
 	{
 		"constant": false,
@@ -1108,7 +1226,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x8a290014"
+		"signature": "0x705a2369"
 	},
 	{
 		"constant": false,
@@ -1129,7 +1247,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xe8e09b8b"
+		"signature": "0xe58c3e86"
 	},
 	{
 		"constant": false,
@@ -1163,6 +1281,53 @@
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "lockStates",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "startTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "iterations",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "unitTime",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "endTime",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x37580f90"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "account",
 				"type": "address"
 			}
@@ -1178,7 +1343,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x05b3c1c9"
+		"signature": "0x55182ccb"
 	},
 	{
 		"constant": true,
@@ -1326,6 +1491,22 @@
 	{
 		"constant": true,
 		"inputs": [],
+		"name": "pUSD",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xf9eea80c"
+	},
+	{
+		"constant": true,
+		"inputs": [],
 		"name": "proxy",
 		"outputs": [
 			{
@@ -1338,6 +1519,50 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xec556889"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "pynths",
+		"outputs": [
+			{
+				"internalType": "contract IPynth",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x57ad4663"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "pynthAddress",
+				"type": "address"
+			}
+		],
+		"name": "pynthsByAddress",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc9a2f3ad"
 	},
 	{
 		"constant": false,
@@ -1379,7 +1604,23 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x1137aedf"
+		"signature": "0x3b09280a"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "resetLock",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xe7eb636d"
 	},
 	{
 		"constant": true,
@@ -1414,22 +1655,6 @@
 		"signature": "0x899ffef4"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "pUSD",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x9324cac7"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -1444,6 +1669,42 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x131b0ae7"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "delay",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "iterations",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "totalLockAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "interval",
+				"type": "uint256"
+			}
+		],
+		"name": "setLock",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x7857637c"
 	},
 	{
 		"constant": false,
@@ -1526,6 +1787,43 @@
 		"signature": "0x987757dd"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "usdcStakeAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "stakeUSDCAndIssueMaxPynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x415d917e"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "usdcStakeAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "issueAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "stakeUSDCAndIssuePynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x95b80e12"
+	},
+	{
 		"constant": true,
 		"inputs": [],
 		"name": "symbol",
@@ -1540,50 +1838,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x95d89b41"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			}
-		],
-		"name": "pynths",
-		"outputs": [
-			{
-				"internalType": "contract IPynth",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x32608039"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "pynthAddress",
-				"type": "address"
-			}
-		],
-		"name": "pynthsByAddress",
-		"outputs": [
-			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x16b2213f"
 	},
 	{
 		"constant": true,
@@ -1621,7 +1875,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x83d625d4"
+		"signature": "0xd3a71202"
 	},
 	{
 		"constant": true,
@@ -1643,7 +1897,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xd60888e4"
+		"signature": "0xd6980ba1"
 	},
 	{
 		"constant": true,
@@ -1740,6 +1994,43 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x6ac0bf9c"
+		"signature": "0xe3c3af98"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "usdcUnstakeAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "burnAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "unstakeUSDCAndBurnPynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x3a560e35"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "burnAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "unstakeUSDCToMaxAndBurnPynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x0b717465"
 	}
 ]

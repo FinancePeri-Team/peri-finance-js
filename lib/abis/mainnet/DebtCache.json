@@ -238,7 +238,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x0fb38465"
+		"signature": "0xf7cc999f"
 	},
 	{
 		"constant": true,
@@ -260,7 +260,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xb13cd785"
+		"signature": "0xdae3de98"
 	},
 	{
 		"constant": true,
@@ -308,7 +308,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x6bf7c435"
+		"signature": "0xfca28f74"
 	},
 	{
 		"constant": true,
@@ -404,7 +404,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x8dd5bfbc"
+		"signature": "0xd6576c84"
 	},
 	{
 		"constant": false,
@@ -477,7 +477,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xd685743a"
+		"signature": "0x8376a782"
 	},
 	{
 		"constant": false,
@@ -493,7 +493,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xcda218c7"
+		"signature": "0xfa9f18d3"
 	},
 	{
 		"constant": false,
@@ -514,7 +514,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x17b38db4"
+		"signature": "0x9f98fb49"
 	},
 	{
 		"constant": false,

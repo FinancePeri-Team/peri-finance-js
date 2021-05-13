@@ -83,7 +83,7 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "debtPercentage",
+				"name": "percentage",
 				"type": "uint256"
 			}
 		],
@@ -109,7 +109,7 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "debtPercentage",
+				"name": "percentage",
 				"type": "uint256"
 			}
 		],
@@ -145,44 +145,6 @@
 	},
 	{
 		"constant": true,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "debtLedger",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x08d95cd5"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "debtLedgerLength",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xcd92eba9"
-	},
-	{
-		"constant": true,
 		"inputs": [],
 		"name": "decimals",
 		"outputs": [
@@ -206,7 +168,7 @@
 				"type": "address"
 			}
 		],
-		"name": "hasIssued",
+		"name": "hasStaked",
 		"outputs": [
 			{
 				"internalType": "bool",
@@ -217,34 +179,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xb992812e"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "issuanceData",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "initialDebtOwnership",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "debtEntryIndex",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x8b3f8088"
+		"signature": "0xc93c8f34"
 	},
 	{
 		"constant": false,

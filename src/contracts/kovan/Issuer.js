@@ -88,6 +88,15 @@ function Issuer(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.availableUSDCStakeAmount = async _account => {
+    return await this.contract.availableUSDCStakeAmount(_account);
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param from {String<EthAddress>}
    * @param amount {BigNumber}
@@ -97,6 +106,18 @@ function Issuer(contractSettings) {
   this.burnPynths = async (from, amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.burnPynths(from, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param burnAmount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnPynthsAndUnstakeUSDCToTarget = async (from, burnAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnPynthsAndUnstakeUSDCToTarget(from, burnAmount, txParams);
   };
 
   /**
@@ -125,6 +146,17 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param from {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnPynthsToTargetAndUnstakeUSDCToTarget = async (from, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnPynthsToTargetAndUnstakeUSDCToTarget(from, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param burnForAddress {String<EthAddress>}
    * @param from {String<EthAddress>}
    * @param txParams {TxParams}
@@ -142,6 +174,15 @@ function Issuer(contractSettings) {
    **/
   this.canBurnPynths = async account => {
     return await this.contract.canBurnPynths(account);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _account {String<EthAddress>}
+   * @returns boolean
+   **/
+  this.canStakeUSDC = async _account => {
+    return await this.contract.canStakeUSDC(_account);
   };
 
   /**
@@ -169,6 +210,15 @@ function Issuer(contractSettings) {
    **/
   this.collateralisationRatioAndAnyRatesInvalid = async _issuer => {
     return await this.contract.collateralisationRatioAndAnyRatesInvalid(_issuer);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.currentUSDCDebtQuota = async _account => {
+    return await this.contract.currentUSDCDebtQuota(_account);
   };
 
   /**
@@ -402,30 +452,53 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param usdcStakeAmount {BigNumber}
+   * @param _issuer {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.stakeUSDCAndIssueMaxPynths = async (from, usdcStakeAmount, txParams) => {
+  this.stakeMaxUSDCAndIssueMaxPynths = async (_issuer, txParams) => {
     txParams = txParams || {};
-    return await this.contract.stakeUSDCAndIssueMaxPynths(from, usdcStakeAmount, txParams);
+    return await this.contract.stakeMaxUSDCAndIssueMaxPynths(_issuer, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param usdcStakeAmount {BigNumber}
-   * @param issueAmount {BigNumber}
+   * @param _issuer {String<EthAddress>}
+   * @param _issueAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.stakeUSDCAndIssuePynths = async (from, usdcStakeAmount, issueAmount, txParams) => {
+  this.stakeMaxUSDCAndIssuePynths = async (_issuer, _issueAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.stakeMaxUSDCAndIssuePynths(_issuer, _issueAmount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _issuer {String<EthAddress>}
+   * @param _usdcStakeAmount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.stakeUSDCAndIssueMaxPynths = async (_issuer, _usdcStakeAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.stakeUSDCAndIssueMaxPynths(_issuer, _usdcStakeAmount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _issuer {String<EthAddress>}
+   * @param _usdcStakeAmount {BigNumber}
+   * @param _issueAmount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.stakeUSDCAndIssuePynths = async (_issuer, _usdcStakeAmount, _issueAmount, txParams) => {
     txParams = txParams || {};
     return await this.contract.stakeUSDCAndIssuePynths(
-      from,
-      usdcStakeAmount,
-      issueAmount,
+      _issuer,
+      _usdcStakeAmount,
+      _issueAmount,
       txParams
     );
   };
@@ -452,32 +525,25 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param usdcUnstakeAmount {BigNumber}
-   * @param burnAmount {BigNumber}
+   * @param _account {String<EthAddress>}
+   * @param _usdcUnstakeAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.unstakeUSDCAndBurnPynths = async (from, usdcUnstakeAmount, burnAmount, txParams) => {
+  this.unstakeAndRefundUSDC = async (_account, _usdcUnstakeAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.unstakeUSDCAndBurnPynths(
-      from,
-      usdcUnstakeAmount,
-      burnAmount,
-      txParams
-    );
+    return await this.contract.unstakeAndRefundUSDC(_account, _usdcUnstakeAmount, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param burnAmount {BigNumber}
+   * @param _account {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.unstakeUSDCToMaxAndBurnPynths = async (from, burnAmount, txParams) => {
+  this.unstakeToTargetAndRefundUSDC = async (_account, txParams) => {
     txParams = txParams || {};
-    return await this.contract.unstakeUSDCToMaxAndBurnPynths(from, burnAmount, txParams);
+    return await this.contract.unstakeToTargetAndRefundUSDC(_account, txParams);
   };
 }
 

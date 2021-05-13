@@ -539,7 +539,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xaa754a2a"
+		"signature": "0xab6a34fa"
 	},
 	{
 		"constant": true,
@@ -1577,7 +1577,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xee5f3f5c"
+		"signature": "0x57b21920"
 	},
 	{
 		"constant": true,

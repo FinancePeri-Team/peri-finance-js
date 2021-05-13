@@ -225,7 +225,7 @@
 		],
 		"name": "VirtualPynthCreated",
 		"type": "event",
-		"signature": "0xb5ec76d79549c775883022e4426db5cd36bd5307f216cdb341554c301548ef9f"
+		"signature": "0x40d987c0a731a91929904e2b9a1a44b1aa1c6ab528b7ee2e35652fe1691cbd36"
 	},
 	{
 		"constant": true,
@@ -662,7 +662,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x57af302c"
+		"signature": "0xa4a9c266"
 	},
 	{
 		"constant": true,
@@ -838,7 +838,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xce096940"
+		"signature": "0x57630a40"
 	},
 	{
 		"constant": false,
@@ -928,7 +928,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x0b9e31c9"
+		"signature": "0x0aed5b46"
 	},
 	{
 		"constant": true,

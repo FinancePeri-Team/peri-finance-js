@@ -42,7 +42,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xeade6d2d"
+		"signature": "0x2ebf118b"
 	},
 	{
 		"constant": true,
@@ -74,7 +74,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xa827bf48"
+		"signature": "0x597ece84"
 	},
 	{
 		"constant": true,
@@ -95,7 +95,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x27fe55a6"
+		"signature": "0xd5541523"
 	},
 	{
 		"constant": true,
@@ -121,7 +121,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x492dbcdd"
+		"signature": "0xb2637a91"
 	},
 	{
 		"constant": true,
@@ -148,6 +148,6 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x0120be33"
+		"signature": "0xca2577e1"
 	}
 ]

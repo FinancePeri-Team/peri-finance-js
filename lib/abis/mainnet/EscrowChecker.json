@@ -32,7 +32,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x9514c232"
+		"signature": "0x59bd8976"
 	},
 	{
 		"inputs": [

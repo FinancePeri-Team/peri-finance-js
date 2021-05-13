@@ -240,6 +240,28 @@
 		"signature": "0x9df95f9f"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_account",
+				"type": "address"
+			}
+		],
+		"name": "availableUSDCStakeAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x89e86ea0"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -259,6 +281,27 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x095314a8"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "burnAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "burnPynthsAndUnstakeUSDCToTarget",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xfdf4f798"
 	},
 	{
 		"constant": false,
@@ -307,6 +350,22 @@
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			}
+		],
+		"name": "burnPynthsToTargetAndUnstakeUSDCToTarget",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x56371c3e"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "burnForAddress",
 				"type": "address"
 			},
@@ -344,6 +403,28 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x2ae78fdb"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_account",
+				"type": "address"
+			}
+		],
+		"name": "canStakeUSDC",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xf1076e0a"
 	},
 	{
 		"constant": true,
@@ -415,6 +496,28 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xae3bbbbb"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_account",
+				"type": "address"
+			}
+		],
+		"name": "currentUSDCDebtQuota",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xf9a3a4bf"
 	},
 	{
 		"constant": true,
@@ -881,12 +984,49 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "from",
+				"name": "_issuer",
+				"type": "address"
+			}
+		],
+		"name": "stakeMaxUSDCAndIssueMaxPynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x5144b0a7"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_issuer",
 				"type": "address"
 			},
 			{
 				"internalType": "uint256",
-				"name": "usdcStakeAmount",
+				"name": "_issueAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "stakeMaxUSDCAndIssuePynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x002e91ba"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_issuer",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_usdcStakeAmount",
 				"type": "uint256"
 			}
 		],
@@ -902,17 +1042,17 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "from",
+				"name": "_issuer",
 				"type": "address"
 			},
 			{
 				"internalType": "uint256",
-				"name": "usdcStakeAmount",
+				"name": "_usdcStakeAmount",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "issueAmount",
+				"name": "_issueAmount",
 				"type": "uint256"
 			}
 		],
@@ -987,46 +1127,36 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "from",
+				"name": "_account",
 				"type": "address"
 			},
 			{
 				"internalType": "uint256",
-				"name": "usdcUnstakeAmount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "burnAmount",
+				"name": "_usdcUnstakeAmount",
 				"type": "uint256"
 			}
 		],
-		"name": "unstakeUSDCAndBurnPynths",
+		"name": "unstakeAndRefundUSDC",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x90c494ab"
+		"signature": "0x285d0523"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "from",
+				"name": "_account",
 				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "burnAmount",
-				"type": "uint256"
 			}
 		],
-		"name": "unstakeUSDCToMaxAndBurnPynths",
+		"name": "unstakeToTargetAndRefundUSDC",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x03f70fdd"
+		"signature": "0x68b02b8d"
 	}
 ]

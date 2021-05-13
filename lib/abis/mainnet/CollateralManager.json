@@ -201,7 +201,7 @@
 		],
 		"name": "ShortablePynthAdded",
 		"type": "event",
-		"signature": "0xa71e21d8a72d99830e0d382f042d37e6a20c8a33ec3185affcaf6586e9a0187a"
+		"signature": "0x228eebae23ce843c98c840591345820f72bfe22ac0ba807deebe0ee7d467ebd3"
 	},
 	{
 		"anonymous": false,
@@ -215,7 +215,7 @@
 		],
 		"name": "ShortablePynthRemoved",
 		"type": "event",
-		"signature": "0x23caa21d7c1015aa7051e1ae4a09f99de36dab4545dfec5f4dde3a54173a123b"
+		"signature": "0xc82c7ce2215189b78c42565fd1d25136f008aab037634d9db1f1b801ac025248"
 	},
 	{
 		"anonymous": false,
@@ -229,7 +229,7 @@
 		],
 		"name": "PynthAdded",
 		"type": "event",
-		"signature": "0x87f8a613724bd8be7a9139e4c83bc8d58fedee7206e2d7077849f5988d787599"
+		"signature": "0xab4de7cb0edc2a9cbd9d540b749091def16b96cfc8a28853eba7fd3d74f71840"
 	},
 	{
 		"anonymous": false,
@@ -243,7 +243,7 @@
 		],
 		"name": "PynthRemoved",
 		"type": "event",
-		"signature": "0x788aff97f65e6ddeee9246c47d08b819813066c87876a912c79baddffb138f0a"
+		"signature": "0x7ff80d3b3127593365b40f9f83c5c8739a8d47febe308d40e9390839b5335cf1"
 	},
 	{
 		"constant": true,
@@ -306,7 +306,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xc88b412e"
+		"signature": "0x0692b170"
 	},
 	{
 		"constant": false,
@@ -327,7 +327,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x23d60e2e"
+		"signature": "0x55bd615c"
 	},
 	{
 		"constant": true,
@@ -354,7 +354,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x93a72fbe"
+		"signature": "0xfb5aa1e1"
 	},
 	{
 		"constant": true,
@@ -381,7 +381,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x72e18b6a"
+		"signature": "0x0e54a19b"
 	},
 	{
 		"constant": true,
@@ -754,7 +754,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x8471db13"
+		"signature": "0x42e32f13"
 	},
 	{
 		"constant": true,
@@ -914,7 +914,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xca969f23"
+		"signature": "0xcc7ae663"
 	},
 	{
 		"constant": false,
@@ -935,7 +935,7 @@
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x710388d1"
+		"signature": "0x2e5de389"
 	},
 	{
 		"constant": true,
@@ -1107,7 +1107,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xf0e740c3"
+		"signature": "0x7060f9e8"
 	},
 	{
 		"constant": true,
@@ -1129,7 +1129,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0x38245377"
+		"signature": "0xcd285020"
 	},
 	{
 		"constant": true,

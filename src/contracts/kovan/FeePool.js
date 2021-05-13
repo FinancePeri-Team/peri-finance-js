@@ -45,23 +45,15 @@ function FeePool(contractSettings) {
    * @param account {String<EthAddress>}
    * @param debtRatio {BigNumber}
    * @param debtEntryIndex {BigNumber}
-   * @param currencyKey {bytes32}
    * @param txParams {TxParams}
   
    **/
-  this.appendAccountIssuanceRecord = async (
-    account,
-    debtRatio,
-    debtEntryIndex,
-    currencyKey,
-    txParams
-  ) => {
+  this.appendAccountIssuanceRecord = async (account, debtRatio, debtEntryIndex, txParams) => {
     txParams = txParams || {};
     return await this.contract.appendAccountIssuanceRecord(
       account,
       debtRatio,
       debtEntryIndex,
-      currencyKey,
       txParams
     );
   };
@@ -101,11 +93,10 @@ function FeePool(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @param period {BigNumber}
-   * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
-  this.effectiveDebtRatioForPeriod = async (account, period, currencyKey) => {
-    return await this.contract.effectiveDebtRatioForPeriod(account, period, currencyKey);
+  this.effectiveDebtRatioForPeriod = async (account, period) => {
+    return await this.contract.effectiveDebtRatioForPeriod(account, period);
   };
 
   /**
@@ -128,11 +119,10 @@ function FeePool(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
-   * @param currencyKey {bytes32}
    * @returns uint256[2][2]
    **/
-  this.feesByPeriod = async (account, currencyKey) => {
-    return await this.contract.feesByPeriod(account, currencyKey);
+  this.feesByPeriod = async account => {
+    return await this.contract.feesByPeriod(account);
   };
 
   /**
@@ -157,7 +147,6 @@ function FeePool(contractSettings) {
    * @param feePeriodIndex {BigNumber}
    * @param feePeriodId {BigNumber}
    * @param startingDebtIndex {BigNumber}
-   * @param startingUSDCDebtIndex {BigNumber}
    * @param startTime {BigNumber}
    * @param feesToDistribute {BigNumber}
    * @param feesClaimed {BigNumber}
@@ -170,7 +159,6 @@ function FeePool(contractSettings) {
     feePeriodIndex,
     feePeriodId,
     startingDebtIndex,
-    startingUSDCDebtIndex,
     startTime,
     feesToDistribute,
     feesClaimed,
@@ -183,7 +171,6 @@ function FeePool(contractSettings) {
       feePeriodIndex,
       feePeriodId,
       startingDebtIndex,
-      startingUSDCDebtIndex,
       startTime,
       feesToDistribute,
       feesClaimed,
