@@ -2034,6 +2034,22 @@
 		"signature": "0x18160ddd"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalUSDCStakerCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x1e61db7d"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -2139,5 +2155,65 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xd2e26c26"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_account",
+				"type": "address"
+			}
+		],
+		"name": "usdcStakedAmountOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x4f5f5821"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "usdcTotalStakedAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x269a92f6"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_account",
+				"type": "address"
+			}
+		],
+		"name": "userUSDCStakingShare",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xaf18f2c8"
 	}
 ]

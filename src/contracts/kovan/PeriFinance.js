@@ -917,6 +917,14 @@ function PeriFinance(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.totalUSDCStakerCount = async () => {
+    return await this.contract.totalUSDCStakerCount();
+  };
+
+  /**
    * ERC20 transfer function.<br>
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
@@ -972,6 +980,32 @@ function PeriFinance(contractSettings) {
   this.unstakeToTargetAndRefundUSDC = async txParams => {
     txParams = txParams || {};
     return await this.contract.unstakeToTargetAndRefundUSDC(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.usdcStakedAmountOf = async _account => {
+    return await this.contract.usdcStakedAmountOf(_account);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.usdcTotalStakedAmount = async () => {
+    return await this.contract.usdcTotalStakedAmount();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _account {String<EthAddress>}
+   * @returns BigNumber
+   **/
+  this.userUSDCStakingShare = async _account => {
+    return await this.contract.userUSDCStakingShare(_account);
   };
 }
 
