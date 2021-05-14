@@ -10,6 +10,11 @@
 				"internalType": "address",
 				"name": "_associatedContract",
 				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_usdcAddress",
+				"type": "address"
 			}
 		],
 		"payable": false,
@@ -155,7 +160,7 @@
 			}
 		],
 		"payable": false,
-		"stateMutability": "view",
+		"stateMutability": "pure",
 		"type": "function",
 		"signature": "0x313ce567"
 	},
@@ -234,6 +239,33 @@
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "_account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "refund",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x410085df"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "_associatedContract",
 				"type": "address"
 			}
@@ -244,6 +276,22 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x52f445ca"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_usdcAddress",
+				"type": "address"
+			}
+		],
+		"name": "setUSDCAddress",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xaaf5bfc3"
 	},
 	{
 		"constant": false,
