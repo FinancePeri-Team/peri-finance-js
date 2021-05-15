@@ -255,7 +255,11 @@ const writeABIFileAsJS = (network, contractName, abi) => {
     fs.mkdirSync(folder);
   }
   const abiPath = path.join(folder, `${contractName}.js`);
-  let content = `export default ${util.inspect(abi, { showHidden: false, depth: null })};`;
+  let content = `export default ${util.inspect(abi, {
+    showHidden: false,
+    depth: null,
+    maxArrayLength: null,
+  })};`;
 
   // don't rewrite the same file if it already exists, just import it
   if (content in abiCache) {
@@ -287,7 +291,7 @@ const writeAllABIFiles = network => {
       if (err) {
         console.log(err);
       } else {
-        console.log(`ABI ${source}.son on ${network} successfully generated locally.`);
+        console.log(`ABI ${source}.json on ${network} successfully generated locally.`);
       }
     });
   }

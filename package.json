@@ -17,7 +17,7 @@
   "scripts": {
     "test": "jest --runInBand --verbose",
     "clean-install": "rm ./package-lock.json && rm -rf node_modules/* && npm install",
-    "clear": "$(rm dist/*.js || true) && $(rm src/contracts/*.js || true) && $(rm lib/abis/*.js || true) && $(rm lib/addresses.js || true)",
+    "clear": "$(rm dist/*.js || true) && $(rm src/contracts/**/*.js || true) && $(rm lib/abis/**/*.js || true) && $(rm lib/addresses.js || true)",
     "lint": "eslint .",
     "format": "prettier --write '{tools,lib,src,__tests__}/**/*.js'",
     "abitojs": "node ./tools/abitojs.js",
