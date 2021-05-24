@@ -520,43 +520,6 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "bytes32",
-				"name": "currencyKey",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "uint256",
-				"name": "currencyRate",
-				"type": "uint256"
-			}
-		],
-		"name": "updateCachedpynthDebtWithRate",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x39eaa61a"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "bytes32[]",
-				"name": "currencyKeys",
-				"type": "bytes32[]"
-			}
-		],
-		"name": "updateCachedpynthDebts",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x0804ebf9"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"internalType": "bool",
 				"name": "currentlyInvalid",
 				"type": "bool"

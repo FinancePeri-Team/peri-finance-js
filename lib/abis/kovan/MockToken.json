@@ -198,6 +198,22 @@
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "_account",
+				"type": "address"
+			}
+		],
+		"name": "faucet",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xb86d1d63"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "spender",
 				"type": "address"
 			},

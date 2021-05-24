@@ -179,10 +179,11 @@ function Issuer(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param _account {String<EthAddress>}
+   * @param _stakingAmount {BigNumber}
    * @returns boolean
    **/
-  this.canStakeUSDC = async _account => {
-    return await this.contract.canStakeUSDC(_account);
+  this.canStakeUSDC = async (_account, _stakingAmount) => {
+    return await this.contract.canStakeUSDC(_account, _stakingAmount);
   };
 
   /**

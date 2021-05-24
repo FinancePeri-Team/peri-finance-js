@@ -411,6 +411,11 @@
 				"internalType": "address",
 				"name": "_account",
 				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_stakingAmount",
+				"type": "uint256"
 			}
 		],
 		"name": "canStakeUSDC",
@@ -424,7 +429,7 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xf1076e0a"
+		"signature": "0x7d80304c"
 	},
 	{
 		"constant": true,
