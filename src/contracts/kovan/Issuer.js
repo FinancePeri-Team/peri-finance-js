@@ -110,14 +110,20 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param burnAmount {BigNumber}
+   * @param _from {String<EthAddress>}
+   * @param _burnAmount {BigNumber}
+   * @param _unstakeAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.burnPynthsAndUnstakeUSDCToTarget = async (from, burnAmount, txParams) => {
+  this.burnPynthsAndUnstakeUSDC = async (_from, _burnAmount, _unstakeAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.burnPynthsAndUnstakeUSDCToTarget(from, burnAmount, txParams);
+    return await this.contract.burnPynthsAndUnstakeUSDC(
+      _from,
+      _burnAmount,
+      _unstakeAmount,
+      txParams
+    );
   };
 
   /**
@@ -142,17 +148,6 @@ function Issuer(contractSettings) {
   this.burnPynthsToTarget = async (from, txParams) => {
     txParams = txParams || {};
     return await this.contract.burnPynthsToTarget(from, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynthsToTargetAndUnstakeUSDCToTarget = async (from, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnPynthsToTargetAndUnstakeUSDCToTarget(from, txParams);
   };
 
   /**
@@ -290,6 +285,24 @@ function Issuer(contractSettings) {
   this.issuePynths = async (from, amount, txParams) => {
     txParams = txParams || {};
     return await this.contract.issuePynths(from, amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _issuer {String<EthAddress>}
+   * @param _issueAmount {BigNumber}
+   * @param _usdcStakeAmount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issuePynthsAndStakeUSDC = async (_issuer, _issueAmount, _usdcStakeAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issuePynthsAndStakeUSDC(
+      _issuer,
+      _issueAmount,
+      _usdcStakeAmount,
+      txParams
+    );
   };
 
   /**
@@ -452,59 +465,6 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param _issuer {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.stakeMaxUSDCAndIssueMaxPynths = async (_issuer, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.stakeMaxUSDCAndIssueMaxPynths(_issuer, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _issuer {String<EthAddress>}
-   * @param _issueAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.stakeMaxUSDCAndIssuePynths = async (_issuer, _issueAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.stakeMaxUSDCAndIssuePynths(_issuer, _issueAmount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _issuer {String<EthAddress>}
-   * @param _usdcStakeAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.stakeUSDCAndIssueMaxPynths = async (_issuer, _usdcStakeAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.stakeUSDCAndIssueMaxPynths(_issuer, _usdcStakeAmount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _issuer {String<EthAddress>}
-   * @param _usdcStakeAmount {BigNumber}
-   * @param _issueAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.stakeUSDCAndIssuePynths = async (_issuer, _usdcStakeAmount, _issueAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.stakeUSDCAndIssuePynths(
-      _issuer,
-      _usdcStakeAmount,
-      _issueAmount,
-      txParams
-    );
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @param currencyKey {bytes32}
    * @param excludeEtherCollateral {boolean}
@@ -522,29 +482,6 @@ function Issuer(contractSettings) {
    **/
   this.transferablePeriFinanceAndAnyRateIsInvalid = async (account, balance) => {
     return await this.contract.transferablePeriFinanceAndAnyRateIsInvalid(account, balance);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _account {String<EthAddress>}
-   * @param _usdcUnstakeAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.unstakeAndRefundUSDC = async (_account, _usdcUnstakeAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.unstakeAndRefundUSDC(_account, _usdcUnstakeAmount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _account {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.unstakeToTargetAndRefundUSDC = async (_account, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.unstakeToTargetAndRefundUSDC(_account, txParams);
   };
 }
 

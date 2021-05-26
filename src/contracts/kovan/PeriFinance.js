@@ -137,12 +137,13 @@ function PeriFinance(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param _burnAmount {BigNumber}
+   * @param _unstakeAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.burnPynthsAndUnstakeUSDCToTarget = async (_burnAmount, txParams) => {
+  this.burnPynthsAndUnstakeUSDC = async (_burnAmount, _unstakeAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.burnPynthsAndUnstakeUSDCToTarget(_burnAmount, txParams);
+    return await this.contract.burnPynthsAndUnstakeUSDC(_burnAmount, _unstakeAmount, txParams);
   };
 
   /**
@@ -165,16 +166,6 @@ function PeriFinance(contractSettings) {
   this.burnPynthsToTarget = async txParams => {
     txParams = txParams || {};
     return await this.contract.burnPynthsToTarget(txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynthsToTargetAndUnstakeUSDCToTarget = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.burnPynthsToTargetAndUnstakeUSDCToTarget(txParams);
   };
 
   /**
@@ -545,6 +536,18 @@ function PeriFinance(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _usdcStakeAmount {BigNumber}
+   * @param _issueAmount {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.issuePynthsAndStakeUSDC = async (_usdcStakeAmount, _issueAmount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.issuePynthsAndStakeUSDC(_usdcStakeAmount, _issueAmount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param issueForAddress {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
@@ -831,50 +834,6 @@ function PeriFinance(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.stakeMaxUSDCAndIssueMaxPynths = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.stakeMaxUSDCAndIssueMaxPynths(txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _issueAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.stakeMaxUSDCAndIssuePynths = async (_issueAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.stakeMaxUSDCAndIssuePynths(_issueAmount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _usdcStakeAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.stakeUSDCAndIssueMaxPynths = async (_usdcStakeAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.stakeUSDCAndIssueMaxPynths(_usdcStakeAmount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _usdcStakeAmount {BigNumber}
-   * @param _issueAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.stakeUSDCAndIssuePynths = async (_usdcStakeAmount, _issueAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.stakeUSDCAndIssuePynths(_usdcStakeAmount, _issueAmount, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String
    **/
@@ -960,27 +919,6 @@ function PeriFinance(contractSettings) {
    **/
   this.transferablePeriFinance = async account => {
     return await this.contract.transferablePeriFinance(account);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _usdcUnstakeAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.unstakeAndRefundUSDC = async (_usdcUnstakeAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.unstakeAndRefundUSDC(_usdcUnstakeAmount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.unstakeToTargetAndRefundUSDC = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.unstakeToTargetAndRefundUSDC(txParams);
   };
 
   /**
