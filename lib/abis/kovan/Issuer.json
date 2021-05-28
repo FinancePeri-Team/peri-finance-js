@@ -313,6 +313,22 @@
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			}
+		],
+		"name": "burnPynthsAndUnstakeUSDCToTarget",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x84bb574f"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "burnForAddress",
 				"type": "address"
 			},

@@ -128,6 +128,17 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _from {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnPynthsAndUnstakeUSDCToTarget = async (_from, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.burnPynthsAndUnstakeUSDCToTarget(_from, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param burnForAddress {String<EthAddress>}
    * @param from {String<EthAddress>}
    * @param amount {BigNumber}

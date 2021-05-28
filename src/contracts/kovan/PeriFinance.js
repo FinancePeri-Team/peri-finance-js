@@ -148,6 +148,16 @@ function PeriFinance(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.burnPynthsAndUnstakeUSDCToTarget = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.burnPynthsAndUnstakeUSDCToTarget(txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param burnForAddress {String<EthAddress>}
    * @param amount {BigNumber}
    * @param txParams {TxParams}
@@ -473,6 +483,15 @@ function PeriFinance(contractSettings) {
    **/
   this.getLockCalculation = async account => {
     return await this.contract.getLockCalculation(account);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _contractName {bytes32}
+   * @returns String<EthAddress>
+   **/
+  this.getRequiredAddress = async _contractName => {
+    return await this.contract.getRequiredAddress(_contractName);
   };
 
   /**

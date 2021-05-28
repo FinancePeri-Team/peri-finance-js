@@ -629,6 +629,16 @@
 	},
 	{
 		"constant": false,
+		"inputs": [],
+		"name": "burnPynthsAndUnstakeUSDCToTarget",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x5744ad70"
+	},
+	{
+		"constant": false,
 		"inputs": [
 			{
 				"internalType": "address",
@@ -1223,6 +1233,28 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x2b793f67"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_contractName",
+				"type": "bytes32"
+			}
+		],
+		"name": "getRequiredAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x2bc93ad6"
 	},
 	{
 		"constant": true,
