@@ -123,18 +123,6 @@ function PeriFinance(contractSettings) {
   };
 
   /**
-   * Burn pynths to clear issued pynths/free PERI.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynths = async (amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnPynths(amount, txParams);
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param _burnAmount {BigNumber}
    * @param _unstakeAmount {BigNumber}
@@ -158,39 +146,6 @@ function PeriFinance(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param burnForAddress {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynthsOnBehalf = async (burnForAddress, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnPynthsOnBehalf(burnForAddress, amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynthsToTarget = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.burnPynthsToTarget(txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param burnForAddress {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynthsToTargetOnBehalf = async (burnForAddress, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnPynthsToTargetOnBehalf(burnForAddress, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param  {String<EthAddress>}
    * @param  {BigNumber}
    * @param txParams {TxParams}
@@ -199,16 +154,6 @@ function PeriFinance(contractSettings) {
   this.burnSecondary = async (address_1, uint256_1, txParams) => {
     txParams = txParams || {};
     return await this.contract.burnSecondary(address_1, uint256_1, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _account {String<EthAddress>}
-   * @param _stakingAmount {BigNumber}
-   * @returns boolean
-   **/
-  this.canStakeUSDC = async (_account, _stakingAmount) => {
-    return await this.contract.canStakeUSDC(_account, _stakingAmount);
   };
 
   /**
@@ -469,24 +414,6 @@ function PeriFinance(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
-   * @returns Object
-   **/
-  this.getLock = async account => {
-    return await this.contract.getLock(account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param account {String<EthAddress>}
-   * @returns Object
-   **/
-  this.getLockCalculation = async account => {
-    return await this.contract.getLockCalculation(account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param _contractName {bytes32}
    * @returns String<EthAddress>
    **/
@@ -532,49 +459,25 @@ function PeriFinance(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param issueForAddress {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issueMaxPynthsOnBehalf = async (issueForAddress, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issueMaxPynthsOnBehalf(issueForAddress, txParams);
-  };
-
-  /**
-   * Issuance is only allowed if the periFinance price isn't stale. Amount should be larger than 0., Issue pynths against the sender's PERI.<br>
-   * Transaction (consumes gas, requires signer)
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issuePynths = async (amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issuePynths(amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _usdcStakeAmount {BigNumber}
    * @param _issueAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.issuePynthsAndStakeUSDC = async (_usdcStakeAmount, _issueAmount, txParams) => {
+  this.issuePynthsAndStakeMaxUSDC = async (_issueAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.issuePynthsAndStakeUSDC(_usdcStakeAmount, _issueAmount, txParams);
+    return await this.contract.issuePynthsAndStakeMaxUSDC(_issueAmount, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param issueForAddress {String<EthAddress>}
-   * @param amount {BigNumber}
+   * @param _issueAmount {BigNumber}
+   * @param _usdcStakeAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.issuePynthsOnBehalf = async (issueForAddress, amount, txParams) => {
+  this.issuePynthsAndStakeUSDC = async (_issueAmount, _usdcStakeAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.issuePynthsOnBehalf(issueForAddress, amount, txParams);
+    return await this.contract.issuePynthsAndStakeUSDC(_issueAmount, _usdcStakeAmount, txParams);
   };
 
   /**
@@ -587,15 +490,6 @@ function PeriFinance(contractSettings) {
   this.liquidateDelinquentAccount = async (account, pusdAmount, txParams) => {
     txParams = txParams || {};
     return await this.contract.liquidateDelinquentAccount(account, pusdAmount, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param  {String<EthAddress>}
-   * @returns Object
-   **/
-  this.lockStates = async address_1 => {
-    return await this.contract.lockStates(address_1);
   };
 
   /**
@@ -749,17 +643,6 @@ function PeriFinance(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.resetLock = async (account, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.resetLock(account, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -784,28 +667,6 @@ function PeriFinance(contractSettings) {
   this.setIntegrationProxy = async (_integrationProxy, txParams) => {
     txParams = txParams || {};
     return await this.contract.setIntegrationProxy(_integrationProxy, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param account {String<EthAddress>}
-   * @param delay {BigNumber}
-   * @param iterations {BigNumber}
-   * @param totalLockAmount {BigNumber}
-   * @param interval {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setLock = async (account, delay, iterations, totalLockAmount, interval, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setLock(
-      account,
-      delay,
-      iterations,
-      totalLockAmount,
-      interval,
-      txParams
-    );
   };
 
   /**

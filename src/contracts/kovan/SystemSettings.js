@@ -90,6 +90,14 @@ function SystemSettings(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
+  this.MAX_USDC_QUOTA = async () => {
+    return await this.contract.MAX_USDC_QUOTA();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
   this.MIN_CROSS_DOMAIN_GAS_LIMIT = async () => {
     return await this.contract.MIN_CROSS_DOMAIN_GAS_LIMIT();
   };

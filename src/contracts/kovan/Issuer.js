@@ -98,18 +98,6 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynths = async (from, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnPynths(from, amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _from {String<EthAddress>}
    * @param _burnAmount {BigNumber}
    * @param _unstakeAmount {BigNumber}
@@ -138,58 +126,12 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Transaction (consumes gas, requires signer)
-   * @param burnForAddress {String<EthAddress>}
-   * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynthsOnBehalf = async (burnForAddress, from, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnPynthsOnBehalf(burnForAddress, from, amount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynthsToTarget = async (from, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnPynthsToTarget(from, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param burnForAddress {String<EthAddress>}
-   * @param from {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynthsToTargetOnBehalf = async (burnForAddress, from, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnPynthsToTargetOnBehalf(burnForAddress, from, txParams);
-  };
-
-  /**
    * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns boolean
    **/
   this.canBurnPynths = async account => {
     return await this.contract.canBurnPynths(account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _account {String<EthAddress>}
-   * @param _stakingAmount {BigNumber}
-   * @returns boolean
-   **/
-  this.canStakeUSDC = async (_account, _stakingAmount) => {
-    return await this.contract.canStakeUSDC(_account, _stakingAmount);
   };
 
   /**
@@ -265,37 +207,25 @@ function Issuer(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
+   * @param _issuer {String<EthAddress>}
    * @param txParams {TxParams}
   
    **/
-  this.issueMaxPynths = async (from, txParams) => {
+  this.issueMaxPynths = async (_issuer, txParams) => {
     txParams = txParams || {};
-    return await this.contract.issueMaxPynths(from, txParams);
+    return await this.contract.issueMaxPynths(_issuer, txParams);
   };
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param issueForAddress {String<EthAddress>}
-   * @param from {String<EthAddress>}
+   * @param _issuer {String<EthAddress>}
+   * @param _issueAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.issueMaxPynthsOnBehalf = async (issueForAddress, from, txParams) => {
+  this.issuePynthsAndStakeMaxUSDC = async (_issuer, _issueAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.issueMaxPynthsOnBehalf(issueForAddress, from, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issuePynths = async (from, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issuePynths(from, amount, txParams);
+    return await this.contract.issuePynthsAndStakeMaxUSDC(_issuer, _issueAmount, txParams);
   };
 
   /**
@@ -314,19 +244,6 @@ function Issuer(contractSettings) {
       _usdcStakeAmount,
       txParams
     );
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param issueForAddress {String<EthAddress>}
-   * @param from {String<EthAddress>}
-   * @param amount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issuePynthsOnBehalf = async (issueForAddress, from, amount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issuePynthsOnBehalf(issueForAddress, from, amount, txParams);
   };
 
   /**

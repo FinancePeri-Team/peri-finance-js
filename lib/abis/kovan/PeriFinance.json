@@ -192,50 +192,6 @@
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "startTime",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "iterations",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "totalAmount",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "unitTime",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "endTime",
-				"type": "uint256"
-			}
-		],
-		"name": "LockChanged",
-		"type": "event",
-		"signature": "0x0053a2d0a74627ad6d346bc05ca92631666b0cec11ac95505fe1f048f3845e11"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
 				"indexed": false,
 				"internalType": "address",
 				"name": "oldOwner",
@@ -595,22 +551,6 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "burnPynths",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xb07ecd2e"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
 				"name": "_burnAmount",
 				"type": "uint256"
 			},
@@ -642,53 +582,6 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "burnForAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "burnPynthsOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x42f760cb"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "burnPynthsToTarget",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x54037f76"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "burnForAddress",
-				"type": "address"
-			}
-		],
-		"name": "burnPynthsToTargetOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x0ce4f2ef"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
 				"name": "",
 				"type": "address"
 			},
@@ -704,33 +597,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xedef719a"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_account",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_stakingAmount",
-				"type": "uint256"
-			}
-		],
-		"name": "canStakeUSDC",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x7d80304c"
 	},
 	{
 		"constant": true,
@@ -1164,80 +1030,6 @@
 		"constant": true,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "getLock",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x6b9db4e6"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "getLockCalculation",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x2b793f67"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
 				"internalType": "bytes32",
 				"name": "_contractName",
 				"type": "bytes32"
@@ -1324,45 +1116,29 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "issueForAddress",
-				"type": "address"
-			}
-		],
-		"name": "issueMaxPynthsOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x28691a75"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
 				"internalType": "uint256",
-				"name": "amount",
+				"name": "_issueAmount",
 				"type": "uint256"
 			}
 		],
-		"name": "issuePynths",
+		"name": "issuePynthsAndStakeMaxUSDC",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x705a2369"
+		"signature": "0x3cf1cf26"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_usdcStakeAmount",
+				"name": "_issueAmount",
 				"type": "uint256"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_issueAmount",
+				"name": "_usdcStakeAmount",
 				"type": "uint256"
 			}
 		],
@@ -1372,27 +1148,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x235b9d3b"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "issueForAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "issuePynthsOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xe58c3e86"
 	},
 	{
 		"constant": false,
@@ -1420,53 +1175,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0xe6203ed1"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "lockStates",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "startTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "iterations",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "totalAmount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "unitTime",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "endTime",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x37580f90"
 	},
 	{
 		"constant": true,
@@ -1752,22 +1460,6 @@
 		"signature": "0x3b09280a"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "resetLock",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xe7eb636d"
-	},
-	{
 		"constant": true,
 		"inputs": [],
 		"name": "resolver",
@@ -1814,42 +1506,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x131b0ae7"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "delay",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "iterations",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "totalLockAmount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "interval",
-				"type": "uint256"
-			}
-		],
-		"name": "setLock",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x7857637c"
 	},
 	{
 		"constant": false,

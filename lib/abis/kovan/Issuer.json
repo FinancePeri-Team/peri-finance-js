@@ -266,27 +266,6 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "burnPynths",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x095314a8"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
 				"name": "_from",
 				"type": "address"
 			},
@@ -325,69 +304,6 @@
 		"signature": "0x84bb574f"
 	},
 	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "burnForAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "burnPynthsOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xe71c452f"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			}
-		],
-		"name": "burnPynthsToTarget",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x56c25f82"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "burnForAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			}
-		],
-		"name": "burnPynthsToTargetOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x4669106a"
-	},
-	{
 		"constant": true,
 		"inputs": [
 			{
@@ -408,33 +324,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x2ae78fdb"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_account",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_stakingAmount",
-				"type": "uint256"
-			}
-		],
-		"name": "canStakeUSDC",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x7d80304c"
 	},
 	{
 		"constant": true,
@@ -615,7 +504,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "from",
+				"name": "_issuer",
 				"type": "address"
 			}
 		],
@@ -631,42 +520,21 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "issueForAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			}
-		],
-		"name": "issueMaxPynthsOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x30662ab9"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "from",
+				"name": "_issuer",
 				"type": "address"
 			},
 			{
 				"internalType": "uint256",
-				"name": "amount",
+				"name": "_issueAmount",
 				"type": "uint256"
 			}
 		],
-		"name": "issuePynths",
+		"name": "issuePynthsAndStakeMaxUSDC",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xba921223"
+		"signature": "0xb4a91a78"
 	},
 	{
 		"constant": false,
@@ -693,32 +561,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x7296827b"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "issueForAddress",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "from",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "issuePynthsOnBehalf",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xdaa01015"
 	},
 	{
 		"constant": true,
