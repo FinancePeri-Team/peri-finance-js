@@ -88,15 +88,6 @@ function Issuer(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _account {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.availableUSDCStakeAmount = async _account => {
-    return await this.contract.availableUSDCStakeAmount(_account);
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param _from {String<EthAddress>}
    * @param _burnAmount {BigNumber}

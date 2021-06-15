@@ -257,6 +257,14 @@ function FeePool(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.quotaTolerance = async () => {
+    return await this.contract.quotaTolerance();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param txParams {TxParams}
   
@@ -333,6 +341,17 @@ function FeePool(contractSettings) {
   this.setProxy = async (_proxy, txParams) => {
     txParams = txParams || {};
     return await this.contract.setProxy(_proxy, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _val {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setQuotaTolerance = async (_val, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setQuotaTolerance(_val, txParams);
   };
 
   /**

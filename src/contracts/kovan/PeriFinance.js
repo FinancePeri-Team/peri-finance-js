@@ -106,15 +106,6 @@ function PeriFinance(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param _account {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.availableUSDCStakeAmount = async _account => {
-    return await this.contract.availableUSDCStakeAmount(_account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param account {String<EthAddress>}
    * @returns BigNumber
    **/

@@ -63,6 +63,14 @@ function PeriFinanceEscrow(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.addressToRefund = async () => {
+    return await this.contract.addressToRefund();
+  };
+
+  /**
    * A call to this should be accompanied by either enough balance already available in this contract, or a corresponding call to periFinance.endow(), to ensure that when the funds are withdrawn, there is enough balance, as well as correctly calculating the fees. This may only be called by the owner during the contract's setup period. Note; although this function could technically be used to produce unbounded arrays, it's only in the foundation's command to add to these lists., Add a new vesting entry at a given time and quantity to an account's schedule.<br>
    * Transaction (consumes gas, requires signer)
    * @param account {String<EthAddress>}
@@ -214,6 +222,17 @@ function PeriFinanceEscrow(contractSettings) {
   this.purgeAccount = async (account, txParams) => {
     txParams = txParams || {};
     return await this.contract.purgeAccount(account, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _addressToRefund {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setAddressToRefund = async (_addressToRefund, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setAddressToRefund(_addressToRefund, txParams);
   };
 
   /**
