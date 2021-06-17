@@ -9,6 +9,7 @@ const SUPPORTED_NETWORKS = {
   4: 'rinkeby',
   5: 'goerli',
   42: 'kovan',
+  80001: 'mumbai',
 };
 
 class ContractSettings {
