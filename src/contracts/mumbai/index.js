@@ -2,6 +2,7 @@ import Depot from './Depot';
 import EscrowChecker from './EscrowChecker';
 import ExchangeRates from './ExchangeRates';
 import FeePool from './FeePool';
+import Pynth from './Pynth';
 import PeriFinance from './PeriFinance';
 import PeriFinanceEscrow from './PeriFinanceEscrow';
 import PeriFinanceState from './PeriFinanceState';
@@ -20,12 +21,18 @@ import Liquidations from './Liquidations';
 import PeriFinanceBridgeToOptimism from './PeriFinanceBridgeToOptimism';
 import SystemSettings from './SystemSettings';
 import pUSD from './pUSD';
+import pBTC from './pBTC';
+import pETH from './pETH';
+import iBTC from './iBTC';
+import iETH from './iETH';
+import pAUD from './pAUD';
 
 export default {
   Depot,
   EscrowChecker,
   ExchangeRates,
   FeePool,
+  Pynth,
   PeriFinance,
   PeriFinanceEscrow,
   PeriFinanceState,
@@ -44,4 +51,9 @@ export default {
   PeriFinanceBridgeToOptimism,
   SystemSettings,
   pUSD,
+  pBTC,
+  pETH,
+  iBTC,
+  iETH,
+  pAUD,
 };
