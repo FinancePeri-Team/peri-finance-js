@@ -28,7 +28,7 @@
 			},
 			{
 				"internalType": "address",
-				"name": "_minterRole",
+				"name": "_childChainManager",
 				"type": "address"
 			}
 		],
@@ -583,6 +583,22 @@
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "childChainManager",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc8291d84"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"internalType": "address",
@@ -689,6 +705,27 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x313ce567"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
+			},
+			{
+				"internalType": "bytes",
+				"name": "depositData",
+				"type": "bytes"
+			}
+		],
+		"name": "deposit",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xcf2c52cb"
 	},
 	{
 		"constant": false,
@@ -1537,6 +1574,22 @@
 		"constant": false,
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "_childChainManager",
+				"type": "address"
+			}
+		],
+		"name": "setChildChainManager",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x764a81bb"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
 				"internalType": "address payable",
 				"name": "_integrationProxy",
 				"type": "address"
@@ -1893,5 +1946,21 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xaf18f2c8"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "withdraw",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x2e1a7d4d"
 	}
 ]

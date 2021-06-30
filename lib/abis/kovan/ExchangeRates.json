@@ -404,6 +404,28 @@
 				"type": "bytes32"
 			}
 		],
+		"name": "currencyByExternal",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xeedb421e"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
 		"name": "currencyKeyDecimals",
 		"outputs": [
 			{
@@ -570,6 +592,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x266da16b"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "externalRateAggregator",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x9e17c96f"
 	},
 	{
 		"constant": false,
@@ -817,22 +855,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x7dc0d1d0"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "oracle_kovan",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x90f5dce4"
 	},
 	{
 		"constant": true,
@@ -1244,6 +1266,43 @@
 		"inputs": [
 			{
 				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bool",
+				"name": "_set",
+				"type": "bool"
+			}
+		],
+		"name": "setCurrencyToExternalAggregator",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xbecb1954"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_aggregator",
+				"type": "address"
+			}
+		],
+		"name": "setExternalRateAggregator",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x40ba3791"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
 				"name": "currencyKey",
 				"type": "bytes32"
 			},
@@ -1295,22 +1354,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x7adbf973"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_oracle",
-				"type": "address"
-			}
-		],
-		"name": "setOracleKovan",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x2f164d13"
 	},
 	{
 		"constant": false,

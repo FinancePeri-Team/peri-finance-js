@@ -21,11 +21,6 @@ import Liquidations from './Liquidations';
 import PeriFinanceBridgeToOptimism from './PeriFinanceBridgeToOptimism';
 import SystemSettings from './SystemSettings';
 import pUSD from './pUSD';
-import pBTC from './pBTC';
-import pETH from './pETH';
-import iBTC from './iBTC';
-import iETH from './iETH';
-import pAUD from './pAUD';
 
 export default {
   Depot,
@@ -51,9 +46,4 @@ export default {
   PeriFinanceBridgeToOptimism,
   SystemSettings,
   pUSD,
-  pBTC,
-  pETH,
-  iBTC,
-  iETH,
-  pAUD,
 };

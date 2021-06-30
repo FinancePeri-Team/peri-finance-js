@@ -111,6 +111,20 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
+				"name": "quota",
+				"type": "uint256"
+			}
+		],
+		"name": "ExternalTokenQuotaUpdated",
+		"type": "event",
+		"signature": "0xab6fde4159cbba0eaae887ab25d5589a9f86c8161284e67ea3a981a5b1584eec"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
 				"name": "newFeePeriodDuration",
 				"type": "uint256"
 			}
@@ -285,20 +299,6 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "quota",
-				"type": "uint256"
-			}
-		],
-		"name": "USDCQuotaChanged",
-		"type": "event",
-		"signature": "0x0d8ea8edb11c63ed82b5b8e9baf4386d5415669a9b3e6a0acb8328a0c23da64d"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": false,
-				"internalType": "uint256",
 				"name": "waitingPeriodSecs",
 				"type": "uint256"
 			}
@@ -338,6 +338,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xfb1b4c7e"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "MAX_EXTERNAL_TOKEN_QUOTA",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xf16fe2db"
 	},
 	{
 		"constant": true,
@@ -450,22 +466,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xaf8bc660"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "MAX_USDC_QUOTA",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x658ba905"
 	},
 	{
 		"constant": true,
@@ -616,6 +616,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x967706e9"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "externalTokenQuota",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xc5cd1215"
 	},
 	{
 		"constant": true,
@@ -930,6 +946,22 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
+				"name": "_newQuota",
+				"type": "uint256"
+			}
+		],
+		"name": "setExternalTokenQuota",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xc1d20ca2"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
 				"name": "_feePeriodDuration",
 				"type": "uint256"
 			}
@@ -1090,22 +1122,6 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_newQuota",
-				"type": "uint256"
-			}
-		],
-		"name": "setUSDCQuota",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xef2b6304"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
 				"name": "_waitingPeriodSecs",
 				"type": "uint256"
 			}
@@ -1148,22 +1164,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xc193f0d8"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "usdcQuota",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x4a686623"
 	},
 	{
 		"constant": true,

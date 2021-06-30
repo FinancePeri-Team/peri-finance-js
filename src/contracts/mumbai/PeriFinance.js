@@ -413,6 +413,16 @@ function PeriFinance(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.inflationalMint = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.inflationalMint(txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
@@ -523,6 +533,18 @@ function PeriFinance(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _user {String<EthAddress>}
+   * @param _amount {BigNumber}
+   * @param txParams {TxParams}
+   * @returns boolean
+   **/
+  this.mint = async (_user, _amount, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.mint(_user, _amount, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param  {String<EthAddress>}
    * @param  {BigNumber}
    * @param txParams {TxParams}
@@ -542,6 +564,14 @@ function PeriFinance(contractSettings) {
   this.mintSecondaryRewards = async (uint256_1, txParams) => {
     txParams = txParams || {};
     return await this.contract.mintSecondaryRewards(uint256_1, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.minterRole = async () => {
+    return await this.contract.minterRole();
   };
 
   /**
@@ -669,6 +699,17 @@ function PeriFinance(contractSettings) {
   this.setMessageSender = async (sender, txParams) => {
     txParams = txParams || {};
     return await this.contract.setMessageSender(sender, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _newMinter {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setMinterRole = async (_newMinter, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setMinterRole(_newMinter, txParams);
   };
 
   /**

@@ -34,6 +34,14 @@ function SystemSettings(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns BigNumber
    **/
+  this.MAX_EXTERNAL_TOKEN_QUOTA = async () => {
+    return await this.contract.MAX_EXTERNAL_TOKEN_QUOTA();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
   this.MAX_FEE_PERIOD_DURATION = async () => {
     return await this.contract.MAX_FEE_PERIOD_DURATION();
   };
@@ -84,14 +92,6 @@ function SystemSettings(contractSettings) {
    **/
   this.MAX_TARGET_THRESHOLD = async () => {
     return await this.contract.MAX_TARGET_THRESHOLD();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.MAX_USDC_QUOTA = async () => {
-    return await this.contract.MAX_USDC_QUOTA();
   };
 
   /**
@@ -168,6 +168,14 @@ function SystemSettings(contractSettings) {
    **/
   this.exchangeFeeRate = async currencyKey => {
     return await this.contract.exchangeFeeRate(currencyKey);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.externalTokenQuota = async () => {
+    return await this.contract.externalTokenQuota();
   };
 
   /**
@@ -351,6 +359,17 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _newQuota {BigNumber}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setExternalTokenQuota = async (_newQuota, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setExternalTokenQuota(_newQuota, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
    * @param _feePeriodDuration {BigNumber}
    * @param txParams {TxParams}
   
@@ -464,17 +483,6 @@ function SystemSettings(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param _newQuota {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setUSDCQuota = async (_newQuota, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setUSDCQuota(_newQuota, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _waitingPeriodSecs {BigNumber}
    * @param txParams {TxParams}
   
@@ -498,14 +506,6 @@ function SystemSettings(contractSettings) {
    **/
   this.tradingRewardsEnabled = async () => {
     return await this.contract.tradingRewardsEnabled();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.usdcQuota = async () => {
-    return await this.contract.usdcQuota();
   };
 
   /**

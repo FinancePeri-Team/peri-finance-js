@@ -92,6 +92,15 @@ function ExchangeRates(contractSettings) {
   /**
    * Call (no gas consumed, doesn't require signer)
    * @param  {bytes32}
+   * @returns boolean
+   **/
+  this.currencyByExternal = async bytes32_1 => {
+    return await this.contract.currencyByExternal(bytes32_1);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param  {bytes32}
    * @returns Number
    **/
   this.currencyKeyDecimals = async bytes32_1 => {
@@ -171,6 +180,14 @@ function ExchangeRates(contractSettings) {
       roundIdForSrc,
       roundIdForDest
     );
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.externalRateAggregator = async () => {
+    return await this.contract.externalRateAggregator();
   };
 
   /**
@@ -466,6 +483,29 @@ function ExchangeRates(contractSettings) {
    **/
   this.roundFrozen = async bytes32_1 => {
     return await this.contract.roundFrozen(bytes32_1);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
+   * @param _set {boolean}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setCurrencyToExternalAggregator = async (_currencyKey, _set, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setCurrencyToExternalAggregator(_currencyKey, _set, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _aggregator {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setExternalRateAggregator = async (_aggregator, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setExternalRateAggregator(_aggregator, txParams);
   };
 
   /**
