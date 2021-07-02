@@ -10,6 +10,7 @@ const SUPPORTED_NETWORKS = {
   4: 'rinkeby',
   5: 'goerli',
   42: 'kovan',
+  137: 'polygon',
   80001: 'mumbai',
 };
 
