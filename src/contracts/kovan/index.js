@@ -22,6 +22,7 @@ import EtherCollateralpUSD from './EtherCollateralpUSD';
 import Liquidations from './Liquidations';
 import PeriFinanceBridgeToOptimism from './PeriFinanceBridgeToOptimism';
 import SystemSettings from './SystemSettings';
+import PeriFinanceToEthereum from './PeriFinanceToEthereum';
 import pUSD from './pUSD';
 
 export default {
@@ -49,5 +50,6 @@ export default {
   Liquidations,
   PeriFinanceBridgeToOptimism,
   SystemSettings,
+  PeriFinanceToEthereum,
   pUSD,
 };

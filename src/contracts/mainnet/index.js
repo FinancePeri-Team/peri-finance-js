@@ -21,11 +21,8 @@ import PynthUtil from './PynthUtil';
 import EtherCollateralpUSD from './EtherCollateralpUSD';
 import Liquidations from './Liquidations';
 import SystemSettings from './SystemSettings';
+import PeriFinanceToEthereum from './PeriFinanceToEthereum';
 import pUSD from './pUSD';
-import pBTC from './pBTC';
-import pETH from './pETH';
-import iBTC from './iBTC';
-import iETH from './iETH';
 
 export default {
   Depot,
@@ -51,9 +48,6 @@ export default {
   EtherCollateralpUSD,
   Liquidations,
   SystemSettings,
+  PeriFinanceToEthereum,
   pUSD,
-  pBTC,
-  pETH,
-  iBTC,
-  iETH,
 };

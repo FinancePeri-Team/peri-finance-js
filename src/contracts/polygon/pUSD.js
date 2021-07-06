@@ -1,15 +1,15 @@
 import { Contract } from 'ethers';
 import ContractSettings from '../../contractSettings';
-import abi from '../../../lib/abis/mainnet/MultiCollateralPynth';
+import abi from '../../../lib/abis/polygon/MultiCollateralPynth';
 
 /** @constructor
  * @param contractSettings {ContractSettings}
  */
-function pETH(contractSettings) {
+function pUSD(contractSettings) {
   this.contractSettings = contractSettings || new ContractSettings();
 
   this.contract = new Contract(
-    this.contractSettings.addressList['ProxypETH'],
+    this.contractSettings.addressList['ProxyERC20pUSD'],
     abi,
     this.contractSettings.signer || this.contractSettings.provider
   );
@@ -343,4 +343,4 @@ function pETH(contractSettings) {
   };
 }
 
-export default pETH;
+export default pUSD;

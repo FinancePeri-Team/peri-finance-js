@@ -1,4 +1,4 @@
-import { getDefaultProvider } from 'ethers';
+import { getDefaultProvider, providers as Providers } from 'ethers';
 import addresses from '../lib/addresses';
 import ABIS from '../lib/abis';
 import pynths from '../lib/pynths';
@@ -11,6 +11,11 @@ const SUPPORTED_NETWORKS = {
   42: 'kovan',
   137: 'polygon',
   80001: 'mumbai',
+};
+
+const PROVIDER_URL = {
+  mumbai: 'https://rpc-mumbai.maticvigil.com/v1/c5e88b495fa51a03f110ec4b047f2802933d625d',
+  polygon: 'https://rpc-mainnet.maticvigil.com/v1/c5e88b495fa51a03f110ec4b047f2802933d625d',
 };
 
 class ContractSettings {
@@ -27,7 +32,11 @@ class ContractSettings {
     this.network = SUPPORTED_NETWORKS[Number(this.networkId)];
     this.provider = provider || getDefaultProvider();
     if (!provider && networkId) {
-      this.provider = getDefaultProvider(this.network);
+      if (['mumbai', 'polygon'].includes(this.network)) {
+        this.provider = new Providers.JsonRpcProvider(PROVIDER_URL[this.network]);
+      } else {
+        this.provider = getDefaultProvider(this.network);
+      }
     }
     this.signer = signer;
     this.addressList = addresses[this.networkId];

@@ -16,8 +16,18 @@ class PeriFinanceJsBase {
     this.network = network;
     const contractForEnv = contracts[network];
     Object.keys(contractForEnv).forEach(name => {
-      const Contract = contractForEnv[name];
-      this[name] = new Contract(contractSettings);
+      if (name === 'PeriFinance') {
+        if (['polygon', 'mumbai'].includes(network)) {
+          const Contract = contractForEnv['PeriFinanceToPolygon'];
+          this[name] = new Contract(contractSettings);
+        } else {
+          const Contract = contractForEnv['PeriFinanceToEthereum'];
+          this[name] = new Contract(contractSettings);
+        }
+      } else {
+        const Contract = contractForEnv[name];
+        this[name] = new Contract(contractSettings);
+      }
     });
     this.util = new util(contractSettings);
     this.utils = this.util;
