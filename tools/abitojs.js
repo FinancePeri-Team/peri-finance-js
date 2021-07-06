@@ -153,7 +153,7 @@ const generate = () => {
     // add the pynth contract as well (target addresses are their proxies, and source is the pynth contract)
     const pynthContracts = peri.getPynths({ network }).reduce((memo, { name, subclass }) => {
       memo[name] = {
-        target: `Proxy${name === 'pUSD' ? 'ERC20pUSD' : name}`,
+        target: `ProxyERC20${name}`,
         source: subclass || 'Pynth',
       };
       return memo;
@@ -186,7 +186,7 @@ const generate = () => {
       const { abi } = peri.getSource({ network, contract: source }) || {};
       // some environments might not have an ABI for this contract yet
       if (abi) {
-        // track which contracts exist in this netork
+        // track which contracts exist in this network
         contractsInNetwork.push(contractName);
 
         // now create import header for index files
