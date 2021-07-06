@@ -9,24 +9,18 @@ const contract = 'Pynth';
 
 describe(`src/contracts/${contract}`, () => {
   Object.entries(SUPPORTED_NETWORKS).forEach(([networkId, network]) => {
-    if (network === 'rinkeby' || network === 'goerli' || network === 'ropsten') return;
+    if (['rinkeby', 'goerli', 'ropsten'].includes(network)) return;
     let perijs;
     beforeAll(() => {
-      let provider;
-      if (network === 'mumbai') {
-        provider = new providers.JsonRpcProvider(
-          'https://rpc-mumbai.maticvigil.com/v1/c5e88b495fa51a03f110ec4b047f2802933d625d'
-        );
-      }
-      perijs = new PeriFinanceJs({ networkId, provider });
+      perijs = new PeriFinanceJs({ networkId });
     });
 
-    ['pUSD', 'pBTC', 'iBTC', 'pETH', 'iETH', 'pAUD'].forEach(pynth => {
+    ['pUSD'].forEach(pynth => {
       describe(pynth, () => {
         test(`${network} Should have correct address and ABI`, () => {
           () => {
             expect(perijs[pynth].contract.address).toEqual(
-              peri.getTarget({ network, contract: `Proxy${pynth}` }).address
+              peri.getTarget({ network, contract: `ProxyERC20${pynth}` }).address
             );
           };
         });

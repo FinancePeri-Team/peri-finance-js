@@ -25,10 +25,19 @@ class Util {
    */
   constructor(contractSettings) {
     this.contractSettings = contractSettings;
-    const { Depot, Pynth, PeriFinance } = contracts[contractSettings.network];
+
+    const { Depot, Pynth } = contracts[contractSettings.network];
     this.depot = new Depot(contractSettings);
     this.pynth = new Pynth(contractSettings);
-    this.periFinance = new PeriFinance(contractSettings);
+
+    if (['polygon', 'mumbai'].includes(contractSettings.network)) {
+      const { PeriFinanceToPolygon } = contracts[contractSettings.network];
+      this.periFinance = new PeriFinanceToPolygon(contractSettings);
+    } else {
+      const { PeriFinanceToEthereum } = contracts[contractSettings.network];
+      this.periFinance = new PeriFinanceToEthereum(contractSettings);
+    }
+
     this.depotInterface = new Interface(contractSettings.ABIS.Depot);
     this.pynthInterface = new Interface(contractSettings.ABIS.Pynth);
 

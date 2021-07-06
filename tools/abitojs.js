@@ -159,6 +159,12 @@ const generate = () => {
       return memo;
     }, {});
 
+    if (['polygon', 'mumbai'].includes(network)) {
+      contracts.PeriFinanceToPolygon = { target: 'PeriFinance' };
+    } else {
+      contracts.PeriFinanceToEthereum = { target: 'PeriFinance' };
+    }
+
     const allContracts = Object.assign({}, contracts, pynthContracts);
 
     const importStringForHeaders = `import ${network} from './${network}';`;
