@@ -1279,22 +1279,6 @@
 	},
 	{
 		"constant": false,
-		"inputs": [],
-		"name": "mint",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x1249c58b"
-	},
-	{
-		"constant": false,
 		"inputs": [
 			{
 				"internalType": "address",

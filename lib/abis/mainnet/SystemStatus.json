@@ -150,6 +150,46 @@
 				"type": "uint256"
 			}
 		],
+		"name": "PynthExchangeResumed",
+		"type": "event",
+		"signature": "0xc6cc5bbf2969f74a5166d0bad983455bf7a65b6372af7260400f9b3b04338090"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "PynthExchangeSuspended",
+		"type": "event",
+		"signature": "0x0af76046e49b0af43f6e092983123f6fb3a25f63bd7096c1bb89649a75a9a494"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
 		"name": "PynthResumed",
 		"type": "event",
 		"signature": "0xddc88fc179cf33f24e5569dd8635c3cd44864e66a1b359bdd9d95e50d94a0d39"
@@ -237,7 +277,7 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "SECTION_SYNTH",
+		"name": "SECTION_PYNTH",
 		"outputs": [
 			{
 				"internalType": "bytes32",
@@ -248,7 +288,23 @@
 		"payable": false,
 		"stateMutability": "view",
 		"type": "function",
-		"signature": "0xf44d1e0b"
+		"signature": "0x1635b0ce"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "SECTION_PYNTH_EXCHANGE",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x387da909"
 	},
 	{
 		"constant": true,
@@ -344,6 +400,33 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xf8b4b084"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "pynths",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "getPynthExchangeSuspensions",
+		"outputs": [
+			{
+				"internalType": "bool[]",
+				"name": "exchangeSuspensions",
+				"type": "bool[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "reasons",
+				"type": "uint256[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x0d2d7c28"
 	},
 	{
 		"constant": true,
@@ -466,6 +549,33 @@
 				"type": "bytes32"
 			}
 		],
+		"name": "pynthExchangeSuspension",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "suspended",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint248",
+				"name": "reason",
+				"type": "uint248"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x4ef4a643"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
 		"name": "pynthSuspension",
 		"outputs": [
 			{
@@ -496,6 +606,27 @@
 	},
 	{
 		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "sourceCurrencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "destinationCurrencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "requireExchangeBetweenPynthsAllowed",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x2cb28bd8"
+	},
+	{
+		"constant": true,
 		"inputs": [],
 		"name": "requireIssuanceActive",
 		"outputs": [],
@@ -519,6 +650,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x1d7e7789"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "requirePynthExchangeActive",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x89bb3dfa"
 	},
 	{
 		"constant": true,
@@ -589,6 +736,54 @@
 	},
 	{
 		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			}
+		],
+		"name": "resumePynthExchange",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x08d10e62"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "currencyKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "resumePynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x2e94d93d"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "currencyKeys",
+				"type": "bytes32[]"
+			}
+		],
+		"name": "resumePynthsExchange",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x14acc95f"
+	},
+	{
+		"constant": false,
 		"inputs": [],
 		"name": "resumeSystem",
 		"outputs": [],
@@ -649,6 +844,69 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x631070fc"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "currencyKey",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "suspendPynthExchange",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x754a4641"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "currencyKeys",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "suspendPynths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x87743c36"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "currencyKeys",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "reason",
+				"type": "uint256"
+			}
+		],
+		"name": "suspendPynthsExchange",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xad135a16"
 	},
 	{
 		"constant": false,
@@ -717,5 +975,36 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x48bf1971"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "bytes32[]",
+				"name": "sections",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "address[]",
+				"name": "accounts",
+				"type": "address[]"
+			},
+			{
+				"internalType": "bool[]",
+				"name": "canSuspends",
+				"type": "bool[]"
+			},
+			{
+				"internalType": "bool[]",
+				"name": "canResumes",
+				"type": "bool[]"
+			}
+		],
+		"name": "updateAccessControls",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x517d60c6"
 	}
 ]

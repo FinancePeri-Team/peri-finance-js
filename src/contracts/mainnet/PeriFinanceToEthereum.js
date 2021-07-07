@@ -543,16 +543,6 @@ function PeriFinanceToEthereum(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.mint = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.mint(txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
    * @param _user {String<EthAddress>}
    * @param _amount {BigNumber}
    * @param txParams {TxParams}
