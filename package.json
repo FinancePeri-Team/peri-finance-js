@@ -1,6 +1,6 @@
 {
   "name": "@perifinance/peri-finance-js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "perifinance",
   "description": "peri-finance JS Library - access peri-finance smart contracts from browser and Node.js",
   "license": "MIT",
