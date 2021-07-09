@@ -859,22 +859,6 @@
 	{
 		"constant": true,
 		"inputs": [],
-		"name": "oracle_kovan",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x90f5dce4"
-	},
-	{
-		"constant": true,
-		"inputs": [],
 		"name": "owner",
 		"outputs": [
 			{
@@ -1370,22 +1354,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x7adbf973"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_oracle",
-				"type": "address"
-			}
-		],
-		"name": "setOracleKovan",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x2f164d13"
 	},
 	{
 		"constant": false,

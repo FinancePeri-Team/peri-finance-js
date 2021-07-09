@@ -428,13 +428,22 @@ function PeriFinanceToPolygon(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.inflationMinter = async () => {
+    return await this.contract.inflationMinter();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
+   * @param _networkDebtShare {BigNumber}
    * @param txParams {TxParams}
    * @returns boolean
    **/
-  this.inflationalMint = async txParams => {
+  this.inflationalMint = async (_networkDebtShare, txParams) => {
     txParams = txParams || {};
-    return await this.contract.inflationalMint(txParams);
+    return await this.contract.inflationalMint(_networkDebtShare, txParams);
   };
 
   /**
@@ -532,16 +541,6 @@ function PeriFinanceToPolygon(contractSettings) {
   this.migrateEscrowBalanceToRewardEscrowV2 = async txParams => {
     txParams = txParams || {};
     return await this.contract.migrateEscrowBalanceToRewardEscrowV2(txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.mint = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.mint(txParams);
   };
 
   /**
@@ -755,6 +754,17 @@ function PeriFinanceToPolygon(contractSettings) {
   this.setTokenState = async (_tokenState, txParams) => {
     txParams = txParams || {};
     return await this.contract.setTokenState(_tokenState, txParams);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _newinflationMinter {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setinflationMinter = async (_newinflationMinter, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setinflationMinter(_newinflationMinter, txParams);
   };
 
   /**

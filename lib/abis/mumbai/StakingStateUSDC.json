@@ -123,6 +123,22 @@
 		"signature": "0x3b60256e821e357caf3d06e48635070876d10074a5b47de82d24b8df4fe217bc"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "USDC_ADDRESS",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xbb09d9b7"
+	},
+	{
 		"constant": false,
 		"inputs": [],
 		"name": "acceptOwnership",
@@ -163,6 +179,33 @@
 		"stateMutability": "pure",
 		"type": "function",
 		"signature": "0x313ce567"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_index",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_cnt",
+				"type": "uint256"
+			}
+		],
+		"name": "getStakersByRange",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x320f90d4"
 	},
 	{
 		"constant": true,
@@ -262,6 +305,28 @@
 		"signature": "0x410085df"
 	},
 	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "registered",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xb2dd5c07"
+	},
+	{
 		"constant": false,
 		"inputs": [
 			{
@@ -276,22 +341,6 @@
 		"stateMutability": "nonpayable",
 		"type": "function",
 		"signature": "0x52f445ca"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_usdcAddress",
-				"type": "address"
-			}
-		],
-		"name": "setUSDCAddress",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xaaf5bfc3"
 	},
 	{
 		"constant": false,
@@ -335,6 +384,44 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x5fcdad91"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "stakers",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xfd5e6dd1"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "stakersLength",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x3d4358b1"
 	},
 	{
 		"constant": true,

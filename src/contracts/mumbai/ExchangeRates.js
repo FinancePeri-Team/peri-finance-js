@@ -307,14 +307,6 @@ function ExchangeRates(contractSettings) {
    * Call (no gas consumed, doesn't require signer)
    * @returns String<EthAddress>
    **/
-  this.oracle_kovan = async () => {
-    return await this.contract.oracle_kovan();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
   this.owner = async () => {
     return await this.contract.owner();
   };
@@ -549,17 +541,6 @@ function ExchangeRates(contractSettings) {
   this.setOracle = async (_oracle, txParams) => {
     txParams = txParams || {};
     return await this.contract.setOracle(_oracle, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _oracle {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.setOracleKovan = async (_oracle, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.setOracleKovan(_oracle, txParams);
   };
 
   /**
