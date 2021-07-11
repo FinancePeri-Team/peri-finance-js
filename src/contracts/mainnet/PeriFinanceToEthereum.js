@@ -113,6 +113,14 @@ function PeriFinanceToEthereum(contractSettings) {
   };
 
   /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns String<EthAddress>
+   **/
+  this.blacklistManager = async () => {
+    return await this.contract.blacklistManager();
+  };
+
+  /**
    * Transaction (consumes gas, requires signer)
    * @param _burnAmount {BigNumber}
    * @param _unstakeAmount {BigNumber}
@@ -686,6 +694,17 @@ function PeriFinanceToEthereum(contractSettings) {
    **/
   this.resolverAddressesRequired = async () => {
     return await this.contract.resolverAddressesRequired();
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _blacklistManager {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.setBlacklistManager = async (_blacklistManager, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.setBlacklistManager(_blacklistManager, txParams);
   };
 
   /**

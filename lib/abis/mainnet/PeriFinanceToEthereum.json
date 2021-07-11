@@ -30,6 +30,11 @@
 				"internalType": "address",
 				"name": "_minterRole",
 				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_blacklistManager",
+				"type": "address"
 			}
 		],
 		"payable": false,
@@ -528,6 +533,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x70a08231"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "blacklistManager",
+		"outputs": [
+			{
+				"internalType": "contract IBlacklistManager",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd9dbf657"
 	},
 	{
 		"constant": false,
@@ -1570,6 +1591,22 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0x899ffef4"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_blacklistManager",
+				"type": "address"
+			}
+		],
+		"name": "setBlacklistManager",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xa56c62cf"
 	},
 	{
 		"constant": false,
