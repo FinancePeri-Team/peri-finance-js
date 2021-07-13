@@ -64,6 +64,8 @@ const contracts = {
   PeriFinanceBridgeToOptimism: true,
   PeriFinanceBridgeToBase: true,
   SystemSettings: true,
+  StakingState: true,
+  ExternalTokenStakeManager: true,
   // the pynths will be added on for each network
 };
 
