@@ -30,6 +30,11 @@
 				"internalType": "address",
 				"name": "_childChainManager",
 				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_blacklistManager",
+				"type": "address"
 			}
 		],
 		"payable": false,
@@ -530,35 +535,41 @@
 		"signature": "0x70a08231"
 	},
 	{
+		"constant": true,
+		"inputs": [],
+		"name": "blacklistManager",
+		"outputs": [
+			{
+				"internalType": "contract IBlacklistManager",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0xd9dbf657"
+	},
+	{
 		"constant": false,
 		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
+			},
 			{
 				"internalType": "uint256",
 				"name": "_burnAmount",
 				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_unstakeAmount",
-				"type": "uint256"
 			}
 		],
-		"name": "burnPynthsAndUnstakeUSDC",
+		"name": "burnPynths",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0xf1dffc00"
-	},
-	{
-		"constant": false,
-		"inputs": [],
-		"name": "burnPynthsAndUnstakeUSDCToTarget",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x5744ad70"
+		"signature": "0x0a057b76"
 	},
 	{
 		"constant": false,
@@ -640,28 +651,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xa311c7c2"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_account",
-				"type": "address"
-			}
-		],
-		"name": "currentUSDCDebtQuota",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf9a3a4bf"
 	},
 	{
 		"constant": true,
@@ -1047,6 +1036,63 @@
 		"signature": "0x0e30963c"
 	},
 	{
+		"constant": false,
+		"inputs": [],
+		"name": "exit",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xe9fad8ee"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_additionalpUSD",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_additionalExToken",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isIssue",
+				"type": "bool"
+			}
+		],
+		"name": "externalTokenQuota",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x9288e704"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "fitToClaimable",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x50d0573c"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
@@ -1174,38 +1220,22 @@
 		"constant": false,
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "_issueAmount",
-				"type": "uint256"
-			}
-		],
-		"name": "issuePynthsAndStakeMaxUSDC",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x3cf1cf26"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_issueAmount",
-				"type": "uint256"
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_usdcStakeAmount",
+				"name": "_issueAmount",
 				"type": "uint256"
 			}
 		],
-		"name": "issuePynthsAndStakeUSDC",
+		"name": "issuePynths",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x235b9d3b"
+		"signature": "0x534f079c"
 	},
 	{
 		"constant": false,
@@ -1581,6 +1611,22 @@
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "_blacklistManager",
+				"type": "address"
+			}
+		],
+		"name": "setBlacklistManager",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xa56c62cf"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "_childChainManager",
 				"type": "address"
 			}
@@ -1813,22 +1859,6 @@
 		"signature": "0x18160ddd"
 	},
 	{
-		"constant": true,
-		"inputs": [],
-		"name": "totalUSDCStakerCount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x1e61db7d"
-	},
-	{
 		"constant": false,
 		"inputs": [
 			{
@@ -1908,66 +1938,6 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xe3c3af98"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_account",
-				"type": "address"
-			}
-		],
-		"name": "usdcStakedAmountOf",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x4f5f5821"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "usdcTotalStakedAmount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0x269a92f6"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_account",
-				"type": "address"
-			}
-		],
-		"name": "userUSDCStakingShare",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xaf18f2c8"
 	},
 	{
 		"constant": false,
