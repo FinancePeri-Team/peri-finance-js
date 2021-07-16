@@ -11,11 +11,15 @@ const SUPPORTED_NETWORKS = {
   42: 'kovan',
   137: 'polygon',
   80001: 'mumbai',
+  // 56: 'bsc',
+  97: 'bsctest',
 };
 
 const PROVIDER_URL = {
   mumbai: 'https://rpc-mumbai.maticvigil.com/v1/c5e88b495fa51a03f110ec4b047f2802933d625d',
   polygon: 'https://rpc-mainnet.maticvigil.com/v1/c5e88b495fa51a03f110ec4b047f2802933d625d',
+  bsc: 'https://bsc-dataseed.binance.org/',
+  bsctest: 'https://data-seed-prebsc-1-s2.binance.org:8545/',
 };
 
 class ContractSettings {
@@ -32,7 +36,7 @@ class ContractSettings {
     this.network = SUPPORTED_NETWORKS[Number(this.networkId)];
     this.provider = provider || getDefaultProvider();
     if (!provider && networkId) {
-      if (['mumbai', 'polygon'].includes(this.network)) {
+      if (['mumbai', 'polygon', 'bsc', 'bsctest'].includes(this.network)) {
         this.provider = new Providers.JsonRpcProvider(PROVIDER_URL[this.network]);
       } else {
         this.provider = getDefaultProvider(this.network);

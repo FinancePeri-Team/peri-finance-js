@@ -12,6 +12,8 @@ const SUPPORTED_NETWORKS = {
   42: 'kovan',
   137: 'polygon',
   80001: 'mumbai',
+  // 56: 'bsc',
+  97: 'bsctest',
 };
 
 /**
