@@ -122,24 +122,14 @@ function PeriFinanceToEthereum(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
    * @param _burnAmount {BigNumber}
-   * @param _unstakeAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.burnPynthsAndUnstakeUSDC = async (_burnAmount, _unstakeAmount, txParams) => {
+  this.burnPynths = async (_currencyKey, _burnAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.burnPynthsAndUnstakeUSDC(_burnAmount, _unstakeAmount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynthsAndUnstakeUSDCToTarget = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.burnPynthsAndUnstakeUSDCToTarget(txParams);
+    return await this.contract.burnPynths(_currencyKey, _burnAmount, txParams);
   };
 
   /**
@@ -152,14 +142,6 @@ function PeriFinanceToEthereum(contractSettings) {
   this.burnSecondary = async (address_1, uint256_1, txParams) => {
     txParams = txParams || {};
     return await this.contract.burnSecondary(address_1, uint256_1, txParams);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns String<EthAddress>
-   **/
-  this.childChainManager = async () => {
-    return await this.contract.childChainManager();
   };
 
   /**
@@ -178,15 +160,6 @@ function PeriFinanceToEthereum(contractSettings) {
    **/
   this.collateralisationRatio = async _issuer => {
     return await this.contract.collateralisationRatio(_issuer);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _account {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.currentUSDCDebtQuota = async _account => {
-    return await this.contract.currentUSDCDebtQuota(_account);
   };
 
   /**
@@ -415,6 +388,43 @@ function PeriFinanceToEthereum(contractSettings) {
   };
 
   /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.exit = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.exit(txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _account {String<EthAddress>}
+   * @param _additionalpUSD {BigNumber}
+   * @param _additionalExToken {BigNumber}
+   * @param _isIssue {boolean}
+   * @returns BigNumber
+   **/
+  this.externalTokenQuota = async (_account, _additionalpUSD, _additionalExToken, _isIssue) => {
+    return await this.contract.externalTokenQuota(
+      _account,
+      _additionalpUSD,
+      _additionalExToken,
+      _isIssue
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param txParams {TxParams}
+  
+   **/
+  this.fitToClaimable = async txParams => {
+    txParams = txParams || {};
+    return await this.contract.fitToClaimable(txParams);
+  };
+
+  /**
    * Call (no gas consumed, doesn't require signer)
    * @param _contractName {bytes32}
    * @returns String<EthAddress>
@@ -429,16 +439,6 @@ function PeriFinanceToEthereum(contractSettings) {
    **/
   this.inflationMinter = async () => {
     return await this.contract.inflationMinter();
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param txParams {TxParams}
-   * @returns boolean
-   **/
-  this.inflationalMint = async txParams => {
-    txParams = txParams || {};
-    return await this.contract.inflationalMint(txParams);
   };
 
   /**
@@ -489,25 +489,14 @@ function PeriFinanceToEthereum(contractSettings) {
 
   /**
    * Transaction (consumes gas, requires signer)
+   * @param _currencyKey {bytes32}
    * @param _issueAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.issuePynthsAndStakeMaxUSDC = async (_issueAmount, txParams) => {
+  this.issuePynths = async (_currencyKey, _issueAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.issuePynthsAndStakeMaxUSDC(_issueAmount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _issueAmount {BigNumber}
-   * @param _usdcStakeAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issuePynthsAndStakeUSDC = async (_issueAmount, _usdcStakeAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issuePynthsAndStakeUSDC(_issueAmount, _usdcStakeAmount, txParams);
+    return await this.contract.issuePynths(_currencyKey, _issueAmount, txParams);
   };
 
   /**
@@ -827,14 +816,6 @@ function PeriFinanceToEthereum(contractSettings) {
   };
 
   /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.totalUSDCStakerCount = async () => {
-    return await this.contract.totalUSDCStakerCount();
-  };
-
-  /**
    * Transaction (consumes gas, requires signer)
    * @param to {String<EthAddress>}
    * @param value {BigNumber}
@@ -866,32 +847,6 @@ function PeriFinanceToEthereum(contractSettings) {
    **/
   this.transferablePeriFinance = async account => {
     return await this.contract.transferablePeriFinance(account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _account {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.usdcStakedAmountOf = async _account => {
-    return await this.contract.usdcStakedAmountOf(_account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @returns BigNumber
-   **/
-  this.usdcTotalStakedAmount = async () => {
-    return await this.contract.usdcTotalStakedAmount();
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
-   * @param _account {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.userUSDCStakingShare = async _account => {
-    return await this.contract.userUSDCStakingShare(_account);
   };
 }
 

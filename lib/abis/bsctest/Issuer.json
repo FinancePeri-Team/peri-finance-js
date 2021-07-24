@@ -248,38 +248,22 @@
 				"type": "address"
 			},
 			{
-				"internalType": "uint256",
-				"name": "_burnAmount",
-				"type": "uint256"
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
 			},
 			{
 				"internalType": "uint256",
-				"name": "_unstakeAmount",
+				"name": "_burnAmount",
 				"type": "uint256"
 			}
 		],
-		"name": "burnPynthsAndUnstakeUSDC",
+		"name": "burnPynths",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x52f9e808"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_from",
-				"type": "address"
-			}
-		],
-		"name": "burnPynthsAndUnstakeUSDCToTarget",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0x84bb574f"
+		"signature": "0x6ac471c4"
 	},
 	{
 		"constant": true,
@@ -379,28 +363,6 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "_account",
-				"type": "address"
-			}
-		],
-		"name": "currentUSDCDebtQuota",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function",
-		"signature": "0xf9a3a4bf"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"internalType": "address",
 				"name": "_issuer",
 				"type": "address"
 			},
@@ -422,6 +384,91 @@
 		"stateMutability": "view",
 		"type": "function",
 		"signature": "0xd37c4d8b"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			}
+		],
+		"name": "exit",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0xb42652e9"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "externalTokenLimit",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x35cf9de5"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_account",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_additionalpUSD",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_additionalExToken",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_isIssue",
+				"type": "bool"
+			}
+		],
+		"name": "externalTokenQuota",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function",
+		"signature": "0x9288e704"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			}
+		],
+		"name": "fitToClaimable",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function",
+		"signature": "0x94955cec"
 	},
 	{
 		"constant": true,
@@ -502,43 +549,22 @@
 				"type": "address"
 			},
 			{
-				"internalType": "uint256",
-				"name": "_issueAmount",
-				"type": "uint256"
-			}
-		],
-		"name": "issuePynthsAndStakeMaxUSDC",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function",
-		"signature": "0xb4a91a78"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_issuer",
-				"type": "address"
+				"internalType": "bytes32",
+				"name": "_currencyKey",
+				"type": "bytes32"
 			},
 			{
 				"internalType": "uint256",
 				"name": "_issueAmount",
 				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_usdcStakeAmount",
-				"type": "uint256"
 			}
 		],
-		"name": "issuePynthsAndStakeUSDC",
+		"name": "issuePynths",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function",
-		"signature": "0x7296827b"
+		"signature": "0x08f95a62"
 	},
 	{
 		"constant": true,

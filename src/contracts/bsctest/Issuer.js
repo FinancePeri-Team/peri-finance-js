@@ -90,30 +90,14 @@ function Issuer(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param _from {String<EthAddress>}
+   * @param _currencyKey {bytes32}
    * @param _burnAmount {BigNumber}
-   * @param _unstakeAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.burnPynthsAndUnstakeUSDC = async (_from, _burnAmount, _unstakeAmount, txParams) => {
+  this.burnPynths = async (_from, _currencyKey, _burnAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.burnPynthsAndUnstakeUSDC(
-      _from,
-      _burnAmount,
-      _unstakeAmount,
-      txParams
-    );
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _from {String<EthAddress>}
-   * @param txParams {TxParams}
-  
-   **/
-  this.burnPynthsAndUnstakeUSDCToTarget = async (_from, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.burnPynthsAndUnstakeUSDCToTarget(_from, txParams);
+    return await this.contract.burnPynths(_from, _currencyKey, _burnAmount, txParams);
   };
 
   /**
@@ -154,21 +138,59 @@ function Issuer(contractSettings) {
 
   /**
    * Call (no gas consumed, doesn't require signer)
-   * @param _account {String<EthAddress>}
-   * @returns BigNumber
-   **/
-  this.currentUSDCDebtQuota = async _account => {
-    return await this.contract.currentUSDCDebtQuota(_account);
-  };
-
-  /**
-   * Call (no gas consumed, doesn't require signer)
    * @param _issuer {String<EthAddress>}
    * @param currencyKey {bytes32}
    * @returns BigNumber
    **/
   this.debtBalanceOf = async (_issuer, currencyKey) => {
     return await this.contract.debtBalanceOf(_issuer, currencyKey);
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _from {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.exit = async (_from, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.exit(_from, txParams);
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @returns BigNumber
+   **/
+  this.externalTokenLimit = async () => {
+    return await this.contract.externalTokenLimit();
+  };
+
+  /**
+   * Call (no gas consumed, doesn't require signer)
+   * @param _account {String<EthAddress>}
+   * @param _additionalpUSD {BigNumber}
+   * @param _additionalExToken {BigNumber}
+   * @param _isIssue {boolean}
+   * @returns BigNumber
+   **/
+  this.externalTokenQuota = async (_account, _additionalpUSD, _additionalExToken, _isIssue) => {
+    return await this.contract.externalTokenQuota(
+      _account,
+      _additionalpUSD,
+      _additionalExToken,
+      _isIssue
+    );
+  };
+
+  /**
+   * Transaction (consumes gas, requires signer)
+   * @param _from {String<EthAddress>}
+   * @param txParams {TxParams}
+  
+   **/
+  this.fitToClaimable = async (_from, txParams) => {
+    txParams = txParams || {};
+    return await this.contract.fitToClaimable(_from, txParams);
   };
 
   /**
@@ -210,31 +232,14 @@ function Issuer(contractSettings) {
   /**
    * Transaction (consumes gas, requires signer)
    * @param _issuer {String<EthAddress>}
+   * @param _currencyKey {bytes32}
    * @param _issueAmount {BigNumber}
    * @param txParams {TxParams}
   
    **/
-  this.issuePynthsAndStakeMaxUSDC = async (_issuer, _issueAmount, txParams) => {
+  this.issuePynths = async (_issuer, _currencyKey, _issueAmount, txParams) => {
     txParams = txParams || {};
-    return await this.contract.issuePynthsAndStakeMaxUSDC(_issuer, _issueAmount, txParams);
-  };
-
-  /**
-   * Transaction (consumes gas, requires signer)
-   * @param _issuer {String<EthAddress>}
-   * @param _issueAmount {BigNumber}
-   * @param _usdcStakeAmount {BigNumber}
-   * @param txParams {TxParams}
-  
-   **/
-  this.issuePynthsAndStakeUSDC = async (_issuer, _issueAmount, _usdcStakeAmount, txParams) => {
-    txParams = txParams || {};
-    return await this.contract.issuePynthsAndStakeUSDC(
-      _issuer,
-      _issueAmount,
-      _usdcStakeAmount,
-      txParams
-    );
+    return await this.contract.issuePynths(_issuer, _currencyKey, _issueAmount, txParams);
   };
 
   /**
